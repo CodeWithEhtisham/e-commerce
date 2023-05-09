@@ -1,353 +1,13 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content=" " />
-    <!-- Title -->
-    <title>Traditional Stuffs</title>
-    <!-- Favicon  -->
-    <link rel="shortcut icon" href="assets/images/fevicon.png" />
-
-    <!-- *********** CSS Files *********** -->
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css" />
-    <!-- Styles CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-</head>
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
 
 <body class="template-index home-version-2">
 
     <!--  Start Main Wrapper -->
     <div class="main-wrapper cart-drawer-push">
         <!-- Start Header Section -->
-        <header class="header bg-white">
-            <!-- Start Top Header -->
-            <div class="container-fluid full-header top-header">
-                <div class="topbar-Header justify-content-between align-items-center">
-                    <div class="row">
-                        <div class="col-2 col-sm-3 col-md-4">
-                            <div class="top-links">
-                                <div class="link-icon toplink-toggle d-lg-none mb-0"> <i class="icon ti-list"
-                                        aria-hidden="true"></i></div>
-                                <ul class="link-items">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Create Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col col-md-4 text-center d-none d-md-block">
-                            <p class="m-0">Free shipping on All Orders. No Minimum Purchase.</p>
-                        </div>
-                        <div class="col-10 col-sm-9 col-md-4 pl-0 text-right">
-                            <div class="phone-number">
-                                <a href="tel:+011234567890">
-                                    <i class="icon fa fa-phone"></i>
-                                    <span class="call">(+01) 123 456 7890</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Top Header -->
-
-            <!-- Start Main Header -->
-            <div class="container-fluid full-header main-header">
-                <div class="d-flex justify-content-between align-items-center">
-                    <!-- Start Logo -->
-                    <div class="col-6 col-md-6 col-lg-2 navbar-brand logo p-0 m-0">
-                        <a href="index.html" class="logo-img">LOGO</a>
-                    </div>
-                    <!-- End Logo -->
-                    <!-- Start Navigation -->
-                    <nav class="navigation navbar position-static navbar-expand-lg p-0 col-lg-8">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbar-collapse"><span class="icon ti-menu"></span></button>
-                        <div id="navbar-collapse" class="navbar-collapse collapse dual-nav">
-                            <a href="#" class="closeNav-btn d-lg-none clearfix" id="closeNav" title="Close"><span
-                                    class="menu-close mr-2">Close</span><i class="ti-close" aria-hidden="true"></i></a>
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Feature
-                                        <span class="arw plush" title="Click to show/hide"></span>
-                                        <span class="lbl hot">Hot</span></a>
-                                    <!-- Start Megamenu Style 1 -->
-                                    <div class="megamenu submenu style1">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12 col-sm-12 col-lg-6">
-                                                    <div class="row">
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-4">
-                                                            <h3>Categories</h3>
-                                                            <ul>
-                                                                <li><a class="item" href="#">Collections</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="megamenu-lvl product-col col-12 col-sm-12 col-lg-3">
-                                                    <h3>Featured Product</h3>
-                                                    <div class="product">
-                                                        <a class="pro-img" href="#"><img
-                                                                class="img-fluid blur-up lazyload"
-                                                                src="assets/images/megamenu/product-1.jpg"
-                                                                data-src="assets/images/megamenu/product-1.jpg"
-                                                                alt="image"
-                                                                title="Naminos elementum disus tincidunts cosmo de cosmopolis" /></a>
-                                                        <div class="pro-details">
-                                                            <h4><a href="#">Naminos elementum disus
-                                                                    tincidunts cosmo de
-                                                                    cosmopolis</a></h4>
-                                                            <p class="star-rating">
-                                                                <i class="spr-icon fa fa-star"></i>
-                                                                <i class="spr-icon fa fa-star"></i>
-                                                                <i class="spr-icon fa fa-star"></i>
-                                                                <i class="spr-icon fa fa-star-o"></i>
-                                                                <i class="spr-icon fa fa-star-o"></i>
-                                                            </p>
-                                                            <p><span class="compare">600.00</span> <span>550.00</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
-                                                    <a href="#"><img class="img-fluid blur-up lazyload"
-                                                            src="assets/images/megamenu/image-1.jpg"
-                                                            data-src="assets/images/megamenu/image-1.jpg" alt="image"
-                                                            title="image" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Megamenu Style 1 -->
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Shop
-                                        <span class="arw plush" title="Click to show/hide"></span>
-                                    </a>
-                                    <!-- Start Megamenu Style 2 -->
-                                    <div class="megamenu submenu style2">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12 col-sm-12 col-lg-6">
-                                                    <div class="row">
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-4">
-                                                            <h3>Shop pages</h3>
-                                                            <ul>
-                                                                <li><a class="item" href="#">Cart</a></li>
-                                                                <li><a class="item" href="#">Checkout</a>
-                                                                </li>
-                                                                <li><a class="item" href="#">Wishlist</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
-                                                    <div class="row">
-                                                        <div class="col-sm-12 img1">
-                                                            <a href="#"><img class="img-fluid blur-up lazyload"
-                                                                    src="assets/images/megamenu/image-2.jpg"
-                                                                    data-src="assets/images/megamenu/image-2.jpg"
-                                                                    alt="image" title="image" /></a>
-                                                        </div>
-                                                        <div class="col-sm-12 img2">
-                                                            <a href="#"><img class="img-fluid blur-up lazyload"
-                                                                    src="assets/images/megamenu/image-2.jpg"
-                                                                    data-src="assets/images/megamenu/image-2.jpg"
-                                                                    alt="image" title="image" /></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
-                                                    <a href="#"><img class="img-fluid blur-up lazyload"
-                                                            src="assets/images/megamenu/image-1.jpg"
-                                                            data-src="assets/images/megamenu/image-1.jpg" alt="image"
-                                                            title="image" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Megamenu Style 2 -->
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Products
-                                        <span class="arw plush" title="Click to show/hide"></span>
-                                        <span class="lbl new">New</span>
-                                    </a>
-                                    <!-- Start Megamenu Style 3 -->
-                                    <div class="megamenu submenu style3">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="row">
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
-                                                            <h3>New Arrival</h3>
-                                                            <ul>
-                                                                <li class="item-img"><a href="#" class="img"><img
-                                                                            class="img-fluid blur-up lazyload"
-                                                                            src="assets/images/megamenu/image-3.jpg"
-                                                                            data-src="assets/images/megamenu/image-3.jpg"
-                                                                            alt="image" title="image" /></a></li>
-                                                                <li><a class="item" href="#">Collections Pages</a></li>
-                                                                <li><a class="item" href="#">Shop pages</a></li>
-                                                                <li><a class="item" href="#">Product pages</a></li>
-                                                                <li><a class="item" href="#">Blog Pages</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
-                                                            <h3>Tires Manufacturing</h3>
-                                                            <ul>
-                                                                <li class="item-img"><a href="#" class="img"><img
-                                                                            class="img-fluid blur-up lazyload"
-                                                                            src="assets/images/megamenu/image-3.jpg"
-                                                                            data-src="assets/images/megamenu/image-3.jpg"
-                                                                            alt="image" title="image" /></a></li>
-                                                                <li><a class="item" href="#">Login</a></li>
-                                                                <li><a class="item" href="#">Register</a></li>
-                                                                <li><a class="item" href="#">My Wishlist</a></li>
-                                                                <li><a class="item" href="#">Shopping Cart</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
-                                                            <h3>Electrical system</h3>
-                                                            <ul>
-                                                                <li class="item-img"><a href="#" class="img"><img
-                                                                            class="img-fluid blur-up lazyload"
-                                                                            src="assets/images/megamenu/image-3.jpg"
-                                                                            data-src="assets/images/megamenu/image-3.jpg"
-                                                                            alt="image" title="image" /></a></li>
-                                                                <li><a class="item" href="#">Our Store</a></li>
-                                                                <li><a class="item" href="#">Company Info</a></li>
-                                                                <li><a class="item" href="#">Favorites</a></li>
-                                                                <li><a class="item" href="#">Private Policy</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
-                                                            <h3>Other components</h3>
-                                                            <ul>
-                                                                <li class="item-img"><a href="#" class="img"><img
-                                                                            class="img-fluid blur-up lazyload"
-                                                                            src="assets/images/megamenu/image-3.jpg"
-                                                                            data-src="assets/images/megamenu/image-3.jpg"
-                                                                            alt="image" title="image" /></a></li>
-                                                                <li><a class="item" href="#">Order Status</a></li>
-                                                                <li><a class="item" href="#">Shipping & Returns</a></li>
-                                                                <li><a class="item" href="#">Shipping & Deliveries</a>
-                                                                </li>
-                                                                <li><a class="item" href="#">Terms & Conditions</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Megamenu Style 3 -->
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#">Pages
-                                        <span class="arw plush" title="Click to show/hide"></span>
-                                    </a>
-                                    <!-- Start Megamenu Dropdown -->
-                                    <div class="megamenu submenu dropdown">
-                                        <ul>
-                                            <li><a class="item" href="#">About Us</a></li>
-                                            <li><a class="item" href="#">FAQ's</a></li>
-                                            <li><a class="item" href="#">Contact Us</a></li>
-                                            <li><a class="item" href="#">Coming Soon</a></li>
-                                            <li><a class="item" href="#">Order Tracking</a></li>
-                                            <li><a class="item" href="#">Compare</a></li>
-                                            <li class="dropmenu">
-                                                <a class="item" href="#">My Account <span class="arw plush"
-                                                        title="Click to show/hide"></span></a>
-                                                <ul class="droplink submenu1">
-                                                    <li><a class="item" href="#">My Account</a></li>
-                                                    <li><a class="item" href="#">Login</a></li>
-                                                    <li><a class="item" href="#">Register</a></li>
-                                                    <li><a class="item" href="#">Forgot Password</a></li>
-                                                    <li><a class="item" href="#">Change Password</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropmenu">
-                                                <a class="item" href="#">Wishlist <span class="arw plush"
-                                                        title="Click to show/hide"></span></a>
-                                                <ul class="droplink submenu1">
-                                                    <li><a class="item" href="#">Wishlist Login</a></li>
-                                                    <li><a class="item" href="#">Wishlist</a></li>
-                                                    <li><a class="item" href="#">Empty Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropmenu">
-                                                <a class="item" href="#">Cart <span class="arw plush"
-                                                        title="Click to show/hide"></span></a>
-                                                <ul class="droplink submenu1">
-                                                    <li><a class="item" href="#">Cart</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropmenu">
-                                                <a class="item" href="#">Checkout <span class="arw plush"
-                                                        title="Click to show/hide"></span></a>
-                                                <ul class="droplink submenu1">
-                                                    <li><a class="item" href="#">Checkout</a></li>
-                                                    <li><a class="item" href="#">Checkout Success</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropmenu">
-                                                <a class="item" href="#">Empty Pages <span class="arw plush"
-                                                        title="Click to show/hide"></span></a>
-                                                <ul class="droplink submenu1">
-                                                    <li><a class="item" href="#">Empty Cart</a></li>
-                                                    <li><a class="item" href="#">Empty Category</a></li>
-                                                    <li><a class="item" href="#">Empty Compare</a></li>
-                                                    <li><a class="item" href="#">Empty Search</a></li>
-                                                    <li><a class="item" href="#">Empty Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- End Megamenu Dropdown -->
-                                </li>
-
-                            </ul>
-                        </div>
-                    </nav>
-                    <!-- Start Navigation -->
-                    <!-- Start Right Menu -->
-                    <div class="col-6 col-md-6 col-lg-2 p-0 right-side">
-                        <!-- Start Minicart -->
-                        <div class="minicart float-right">
-                            <a href="#" class="cart-btn" title="Cart" data-toggle="modal" data-target="#mycartdrawer">
-                                <i class="icon ti-shopping-cart"></i>
-                                <div class="cart-count">
-                                    <span id="count">4</span>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Minicart -->
-                        <!-- Start Search Box -->
-                        <div class="search-box float-right">
-                            <a href="#" title="Search" class="search-open search-toggle" data-toggle="modal"
-                                data-target="#searchform">
-                                <i class="icon ti-search"></i>
-                            </a>
-                        </div>
-                        <!-- End Search Show -->
-                    </div>
-                    <!-- End Right Menu -->
-                </div>
-            </div>
-            <!-- End Main Header -->
-        </header>
+        {% include 'header.html'%}
         <!-- End Header Section -->
 
         <!-- Start Main Content -->
@@ -357,7 +17,7 @@
                 <!-- Start Slidershow Banner -->
                 <div class="slideshow slideshow-banner">
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                        style="background-image:url(assets/images/slider/banner-v2-1.jpg);">
+                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Buy With Confidence Our Traditional</h3>
                             <p>High Quality Stuffs</p>
@@ -365,7 +25,7 @@
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                        style="background-image:url(assets/images/slider/banner-v2-1.jpg);">
+                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Perfect choice for Mens and Womens</h3>
                             <p>High Quality Stuffs/p>
@@ -373,7 +33,7 @@
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                        style="background-image:url(assets/images/slider/banner-v2-1.jpg);">
+                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Perfect and Handy made</h3>
                             <p>High Quality Stuffs</p>
@@ -416,12 +76,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload primary-img"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover secondary-img"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -477,12 +137,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -537,12 +197,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -596,12 +256,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -665,12 +325,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -724,12 +384,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -781,12 +441,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -837,12 +497,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -909,12 +569,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -966,12 +626,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1025,12 +685,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1081,12 +741,12 @@
                                             <div class="product-image">
                                                 <a href="product-details.html">
                                                     <img class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-1.jpg"
-                                                        data-src="assets/images/products/product-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
                                                         title="image" />
                                                     <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="assets/images/products/product-1-1.jpg"
-                                                        data-src="assets/images/products/product-1-1.jpg" alt="image"
+                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
+                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1154,8 +814,8 @@
                                 <div class="item-img">
                                     <a href="#" class="animate-scale zoom-hover-effect"><img
                                             class="img-fluid blur-up lazyload w-100"
-                                            src="assets/images/collection/classic-image-1.jpg"
-                                            data-src="assets/images/collection/classic-image-1.jpg" alt="image"
+                                            src="{% static 'website/images/collection/classic-image-1.jpg'%}"
+                                            data-src="{% static 'website/images/collection/classic-image-1.jpg'%}" alt="image"
                                             title="image" /></a>
                                 </div>
                                 <div class="item-content text-center">
@@ -1175,8 +835,8 @@
                                 <div class="item-img">
                                     <a href="#" class="animate-scale zoom-hover-effect"><img
                                             class="img-fluid blur-up lazyload w-100"
-                                            src="assets/images/collection/classic-image-1.jpg"
-                                            data-src="assets/images/collection/classic-image-1.jpg" alt="image"
+                                            src="{% static 'website/images/collection/classic-image-1.jpg'%}"
+                                            data-src="{% static 'website/images/collection/classic-image-1.jpg'%}" alt="image"
                                             title="image" /></a>
                                 </div>
                             </div>
@@ -1212,10 +872,10 @@
                             <div class="aboutus-video">
                                 <div id="play-youtube-video" class="position-relative d-block zoom-hover-effect">
                                     <img class="img-fluid blur-up lazyload w-100"
-                                        src="assets/images/others/video-img.jpg"
-                                        data-src="assets/images/others/video-img.jpg" alt="image" title="image" />
+                                        src="{% static 'website/images/others/video-img.jpg'%}"
+                                        data-src="{% static 'website/images/others/video-img.jpg'%}" alt="image" title="image" />
                                     <a href="#open-video-popup" class="vid-icon open-video-popup"><img
-                                            class="img-fluid opacity1" src="assets/images/icons/video-icon.png"
+                                            class="img-fluid opacity1" src="{% static 'website/images/icons/video-icon.png'%}"
                                             alt="image" title="Click Me" /></a>
                                 </div>
                                 <div id="open-video-popup" class="youtube-video-popup magnific-popup mfp-hide">
@@ -1243,8 +903,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="assets/images/collection/collection-small1.jpg"
-                                        data-src="assets/images/collection/collection-small1.jpg" alt="image"
+                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
+                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -1261,8 +921,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="assets/images/collection/collection-small1.jpg"
-                                        data-src="assets/images/collection/collection-small1.jpg" alt="image"
+                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
+                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -1279,8 +939,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="assets/images/collection/collection-small1.jpg"
-                                        data-src="assets/images/collection/collection-small1.jpg" alt="image"
+                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
+                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -1301,7 +961,7 @@
             <!-- Start Parallax Banner Section -->
             <div class="parallax-image-section sections-spacing">
                 <div class="parallax-image-banner"
-                    style="background-image:url('./assets/images/others/parrallax-bg.jpg');">
+                style="background-image:url('{% static 'website/images/others/parrallax-bg.jpg' %}');">
                     <div class="parallax-details">
                         <div class="container">
                             <h3>Any TITLE</h3>
@@ -1336,8 +996,8 @@
                                         <div class="quote-author d-flex flex-row align-items-center text-left clearfix">
                                             <div class="author-img">
                                                 <img class="img-fluid blur-up w-100 lazyload"
-                                                    src="assets/images/testmonial/quote-1.jpg"
-                                                    data-src="assets/images/testmonial/quote-1.jpg" alt="image"
+                                                    src="{% static 'website/images/testmonial/quote-1.jpg'%}"
+                                                    data-src="{% static 'website/images/testmonial/quote-1.jpg'%}" alt="image"
                                                     title="ALEX LEEMAN" />
                                             </div>
                                             <div class="author-name">
@@ -1356,8 +1016,8 @@
                                         <div class="quote-author d-flex flex-row align-items-center text-left clearfix">
                                             <div class="author-img">
                                                 <img class="img-fluid blur-up w-100 lazyload"
-                                                    src="assets/images/testmonial/quote-1.jpg"
-                                                    data-src="assets/images/testmonial/quote-1.jpg" alt="image"
+                                                    src="{% static 'website/images/testmonial/quote-1.jpg'%}"
+                                                    data-src="{% static 'website/images/testmonial/quote-1.jpg'%}" alt="image"
                                                     title="ALEX LEEMAN" />
                                             </div>
                                             <div class="author-name">
@@ -1376,8 +1036,8 @@
                                         <div class="quote-author d-flex flex-row align-items-center text-left clearfix">
                                             <div class="author-img">
                                                 <img class="img-fluid blur-up w-100 lazyload"
-                                                    src="assets/images/testmonial/quote-1.jpg"
-                                                    data-src="assets/images/testmonial/quote-1.jpg" alt="image"
+                                                    src="{% static 'website/images/testmonial/quote-1.jpg'%}"
+                                                    data-src="{% static 'website/images/testmonial/quote-1.jpg'%}" alt="image"
                                                     title="ALEX LEEMAN" />
                                             </div>
                                             <div class="author-name">
@@ -1407,8 +1067,8 @@
                                             <div class="col-12 col-sm-6 blog-img">
                                                 <a href="#" class="animate-scale">
                                                     <img class="img-fluid blur-up w-100 lazyload"
-                                                        src="assets/images/blog/blog-1.jpg"
-                                                        data-src="assets/images/blog/blog-1.jpg" alt="image"
+                                                        src="{% static 'website/images/blog/blog-1.jpg'%}"
+                                                        data-src="{% static 'website/images/blog/blog-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1441,8 +1101,8 @@
                                             <div class="col-12 col-sm-6 blog-img">
                                                 <a href="#" class="animate-scale">
                                                     <img class="img-fluid blur-up w-100 lazyload"
-                                                        src="assets/images/blog/blog-1.jpg"
-                                                        data-src="assets/images/blog/blog-1.jpg" alt="image"
+                                                        src="{% static 'website/images/blog/blog-1.jpg'%}"
+                                                        data-src="{% static 'website/images/blog/blog-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1474,8 +1134,8 @@
                                             <div class="col-12 col-sm-6 blog-img">
                                                 <a href="#" class="animate-scale">
                                                     <img class="img-fluid blur-up w-100 lazyload"
-                                                        src="assets/images/blog/blog-1.jpg"
-                                                        data-src="assets/images/blog/blog-1.jpg" alt="image"
+                                                        src="{% static 'website/images/blog/blog-1.jpg'%}"
+                                                        data-src="{% static 'website/images/blog/blog-1.jpg'%}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -1519,37 +1179,37 @@
                     <div class="row row-sp brand-slider">
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                         <div class="col-sp col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">
                             <a class="brands-item" href="#"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/brand/brand1.jpg" data-src="assets/images/brand/brand1.jpg"
+                                    src="{% static 'website/images/brand/brand1.jpg'%}" data-src="{% static 'website/images/brand/brand1.jpg'%}"
                                     alt="image" title="image" /></a>
                         </div>
                     </div>
@@ -1567,8 +1227,8 @@
                     <div class="row no-gutters instagram-grid">
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6">
                             <a class="instagram-item" href="#">
-                                <img class="img-fluid blur-up lazyload" src="assets/images/instagram/instagram1.jpg"
-                                    data-src="assets/images/instagram/instagram1.jpg" alt="image" title="image" />
+                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/instagram/instagram1.jpg'%}"
+                                    data-src="{% static 'website/images/instagram/instagram1.jpg'%}" alt="image" title="image" />
                                 <!-- Start Instagram Overlay -->
                                 <div class="insta-overlay">
                                     <div class="insta-wishs">
@@ -1584,8 +1244,8 @@
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6">
                             <a class="instagram-item" href="#">
-                                <img class="img-fluid blur-up lazyload" src="assets/images/instagram/instagram1.jpg"
-                                    data-src="assets/images/instagram/instagram1.jpg" alt="image" title="image" />
+                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/instagram/instagram1.jpg'%}"
+                                    data-src="{% static 'website/images/instagram/instagram1.jpg'%}" alt="image" title="image" />
                                 <!-- Start Instagram Overlay -->
                                 <div class="insta-overlay">
                                     <div class="insta-wishs">
@@ -1601,8 +1261,8 @@
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6">
                             <a class="instagram-item" href="#">
-                                <img class="img-fluid blur-up lazyload" src="assets/images/instagram/instagram1.jpg"
-                                    data-src="assets/images/instagram/instagram1.jpg" alt="image" title="image" />
+                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/instagram/instagram1.jpg'%}"
+                                    data-src="{% static 'website/images/instagram/instagram1.jpg'%}" alt="image" title="image" />
                                 <!-- Start Instagram Overlay -->
                                 <div class="insta-overlay">
                                     <div class="insta-wishs">
@@ -1618,8 +1278,8 @@
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6">
                             <a class="instagram-item" href="#">
-                                <img class="img-fluid blur-up lazyload" src="assets/images/instagram/instagram1.jpg"
-                                    data-src="assets/images/instagram/instagram1.jpg" alt="image" title="image" />
+                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/instagram/instagram1.jpg'%}"
+                                    data-src="{% static 'website/images/instagram/instagram1.jpg'%}" alt="image" title="image" />
                                 <!-- Start Instagram Overlay -->
                                 <div class="insta-overlay">
                                     <div class="insta-wishs">
@@ -1647,8 +1307,8 @@
                             <div class="info-area d-flex flex-column align-items-center text-center">
                                 <div class="info-icon">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/icons/free-shipping-v2.png"
-                                        data-src="assets/images/icons/free-shipping-v2.png" alt="image" title="image" />
+                                        src="{% static 'website/images/icons/free-shipping-v2.png'%}"
+                                        data-src="{% static 'website/images/icons/free-shipping-v2.png'%}" alt="image" title="image" />
                                 </div>
                                 <div class="info-details">
                                     <h5>Free Worldwide Shipping</h5>
@@ -1659,8 +1319,8 @@
                         <div class="info-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
                             <div class="info-area d-flex flex-column align-items-center text-center">
                                 <div class="info-icon">
-                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/money-back-v2.png"
-                                        data-src="assets/images/icons/money-back-v2.png" alt="image" title="image" />
+                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/money-back-v2.png'%}"
+                                        data-src="{% static 'website/images/icons/money-back-v2.png'%}" alt="image" title="image" />
                                 </div>
                                 <div class="info-details">
                                     <h5>Money Back Gurantee</h5>
@@ -1671,8 +1331,8 @@
                         <div class="info-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
                             <div class="info-area d-flex flex-column align-items-center text-center">
                                 <div class="info-icon">
-                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/support-24-v2.png"
-                                        data-src="assets/images/icons/support-24-v2.png" alt="image" title="image" />
+                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/support-24-v2.png'%}"
+                                        data-src="{% static 'website/images/icons/support-24-v2.png'%}" alt="image" title="image" />
                                 </div>
                                 <div class="info-details">
                                     <h5>Support 24/7</h5>
@@ -1684,8 +1344,8 @@
                             <div class="info-area d-flex flex-column align-items-center text-center">
                                 <div class="info-icon">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/icons/secure-payment-v2.png"
-                                        data-src="assets/images/icons/secure-payment-v2.png" alt="image"
+                                        src="{% static 'website/images/icons/secure-payment-v2.png'%}"
+                                        data-src="{% static 'website/images/icons/secure-payment-v2.png'%}" alt="image"
                                         title="image" />
                                 </div>
                                 <div class="info-details">
@@ -1703,89 +1363,7 @@
         <!-- End Main Content -->
 
         <!-- Start Footer Section -->
-        <footer class="footer bg-white footer-v2">
-            <!-- Start Footer Topbar -->
-            <div class="footer-top p-0 clearfix">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 newsletter-form">
-                            <div class="footer-newsletter">
-                                <h3>Sign up to our Newsletter<br> and receive 10% off your first order!</h3>
-                                <form action="#" class="needs-validation" method="post">
-                                    <div class="form-group m-0 position-relative">
-                                        <input type="text" class="form-control"
-                                            placeholder="Enter your email address..." required />
-                                        <button class="btn btn-primary" type="submit">Subscribe<i
-                                                class="icon fa fa-chevron-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 site-footer-links">
-                            <div class="row footer-links">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 menu-items">
-                                    <h4>Useful Links</h4>
-                                    <ul class="linklist">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">FAQs</a></li>
-                                        <li><a href="#">Parts Shop</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 menu-items">
-                                    <h4>Help Links</h4>
-                                    <ul class="linklist">
-                                        <li><a href="#">Login</a></li>
-                                        <li><a href="#">My Wishlist</a></li>
-                                        <li><a href="#">Order Traking</a></li>
-                                        <li><a href="#">Returns</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Delivery</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer Topbar -->
-            <!-- Start Footer Middle -->
-            <div class="footer-middle clearfix">
-                <div class="container">
-                    <div class="row d-flex flex-row align-items-center">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 ftr-social-icons">
-                            <div class="social-icons">
-                                <ul class="d-flex flex-row align-items-center text-center">
-                                    <li><a href="#" title="Facebook"><i class="icon ti-facebook"></i></a></li>
-                                    <li><a href="#" title="Twitter"><i class="icon ti-twitter"></i></a></li>
-                                    <li><a href="#" title="Instagram"><i class="icon ti-instagram"></i></a></li>
-                                    <li><a href="#" title="Google Plus"><i class="icon ti-google"></i></a></li>
-                                    <li><a href="#" title="Youtube"><i class="icon ti-youtube"></i></a></li>
-                                    <li><a href="#" title="Vimeo"><i class="icon ti-vimeo"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 text-center site-ftr-logo">
-                            <div class="ftr-logo">
-                                <a href="#">LOGO</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 ftr-payment-icon">
-                            <div class="payment-icons pull-right">
-                                <i class="fa fa-cc-visa" aria-hidden="true"></i>
-                                <i class="fa fa-cc-amex" aria-hidden="true"></i>
-                                <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
-                                <i class="fa fa-cc-discover" aria-hidden="true"></i>
-                                <i class="fa fa-cc-paypal" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer Middle -->
-        </footer>
+        {% include 'footer.html'%}
         <!-- End Footer Section -->
 
         <!-- Start Scroll Top -->
@@ -1832,8 +1410,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
                                         title="Donec pede justo fringilla" />
                                 </a>
                             </div>
@@ -1851,8 +1429,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
                                         title="Sociosqu facilisi senectus nisi etiam" />
                                 </a>
                             </div>
@@ -1870,8 +1448,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
                                         title="Nullam scelerisque suscipit sociis" />
                                 </a>
                             </div>
@@ -1889,8 +1467,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
                                         title="Pellentesque habitant morbi" />
                                 </a>
                             </div>
@@ -1940,8 +1518,8 @@
             <div class="addtocart-inner-content text-center">
                 <h4>Added to Cart Successfully</h4>
                 <p class="pro-img"><img class="img-fluid blur-up lazyload"
-                        src="assets/images/products/addtocart-popup.jpg"
-                        data-src="assets/images/products/addtocart-popup.jpg" alt="image" title="image" /></p>
+                        src="{% static 'website/images/products/addtocart-popup.jpg'%}"
+                        data-src="{% static 'website/images/products/addtocart-popup.jpg'%}" alt="image" title="image" /></p>
                 <p class="modal-prod-name mb-1 font-15">Carb Fits Cigarette tiyer</p>
                 <p class="mb-1 font-13">Color: Black</p>
                 <p class="font-13">Quantity: 1</p>
@@ -1967,46 +1545,46 @@
                     <div class="col-12 col-sm-12 col-md-6">
                         <div class="product-single-photo slider thumbnails-single">
                             <div class="single-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1.jpg"
-                                    data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="single-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1.jpg"
-                                    data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="single-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1.jpg"
-                                    data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="single-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1.jpg"
-                                    data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="single-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1.jpg"
-                                    data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" />
                             </div>
                         </div>
                         <div class="product-thumb slider thumbnail-items">
                             <div class="thumb-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1-item.jpg"
-                                    data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1-item.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="thumb-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1-item.jpg"
-                                    data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1-item.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="thumb-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1-item.jpg"
-                                    data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1-item.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="thumb-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1-item.jpg"
-                                    data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1-item.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" />
                             </div>
                             <div class="thumb-item"><img class="img-fluid blur-up lazyload"
-                                    src="assets/images/products/quick-view-1-item.jpg"
-                                    data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" />
+                                    src="{% static 'website/images/products/quick-view-1-item.jpg'%}"
+                                    data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" />
                             </div>
                         </div>
                     </div>
@@ -2127,8 +1705,8 @@
             <div class="wishlist-inner-content text-center">
                 <h4>Successfully added in wishlist</h4>
                 <p class="pro-img"><img class="img-fluid blur-up lazyload"
-                        src="assets/images/products/addwishlist-popup.jpg"
-                        data-src="assets/images/products/addwishlist-popup.jpg" alt="image" title="image" /></p>
+                        src="{% static 'website/images/products/addwishlist-popup.jpg'%}"
+                        data-src="{% static 'website/images/products/addwishlist-popup.jpg'%}" alt="image" title="image" /></p>
                 <p class="modal-prod-name mb-4 font-15">Carb Fits Cigarette tiyer</p>
                 <div class="button-action">
                     <button class="btn btn-secondary btn-block mb-3 continue-shopping close-popup">Continue
@@ -2145,12 +1723,8 @@
     </div>
     <!--  End Main Wrapper -->
 
-    <!-- ******** JS Files ******** -->
-    <!-- Plugin JS -->
-    <script src="assets/js/plugins.js"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    {% include 'script.html'%}
 
 </body>
 
-</html>
+{% endblock%}

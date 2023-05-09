@@ -1,0 +1,325 @@
+{% load static %}
+
+<header class="header bg-white">
+    <!-- Start Top Header -->
+    <div class="container-fluid full-header top-header">
+        <div class="topbar-Header justify-content-between align-items-center">
+            <div class="row">
+                <div class="col-2 col-sm-3 col-md-4">
+                    <div class="top-links">
+                        <div class="link-icon toplink-toggle d-lg-none mb-0"> <i class="icon ti-list"
+                                aria-hidden="true"></i></div>
+                        <ul class="link-items">
+                            <li><a href="{% url 'login'%}">Login</a></li>
+                            <li><a href="{% url 'register'%}">Create Account</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col col-md-4 text-center d-none d-md-block">
+                    <p class="m-0">Free shipping on All Orders. No Minimum Purchase.</p>
+                </div>
+                <div class="col-10 col-sm-9 col-md-4 pl-0 text-right">
+                    <div class="phone-number">
+                        <a href="tel:+011234567890">
+                            <i class="icon fa fa-phone"></i>
+                            <span class="call">(+01) 123 456 7890</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Header -->
+
+    <!-- Start Main Header -->
+    <div class="container-fluid full-header main-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Start Logo -->
+            <div class="col-6 col-md-6 col-lg-2 navbar-brand logo p-0 m-0">
+                <a href="{% url 'index'%}" class="logo-img">LOGO</a>
+            </div>
+            <!-- End Logo -->
+            <!-- Start Navigation -->
+            <nav class="navigation navbar position-static navbar-expand-lg p-0 col-lg-8">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbar-collapse"><span class="icon ti-menu"></span></button>
+                <div id="navbar-collapse" class="navbar-collapse collapse dual-nav">
+                    <a href="#" class="closeNav-btn d-lg-none clearfix" id="closeNav" title="Close"><span
+                            class="menu-close mr-2">Close</span><i class="ti-close" aria-hidden="true"></i></a>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Feature
+                                <span class="arw plush" title="Click to show/hide"></span>
+                                <span class="lbl hot">Hot</span></a>
+                            <!-- Start Megamenu Style 1 -->
+                            <div class="megamenu submenu style1">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-lg-6">
+                                            <div class="row">
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-4">
+                                                    <h3>Categories</h3>
+                                                    <ul>
+                                                        <li><a class="item" href="#">Collections</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="megamenu-lvl product-col col-12 col-sm-12 col-lg-3">
+                                            <h3>Featured Product</h3>
+                                            <div class="product">
+                                                <a class="pro-img" href="#"><img
+                                                        class="img-fluid blur-up lazyload"
+                                                        src="{% static 'website/images/megamenu/product-1.jpg'%}"
+                                                        data-src="{% static 'website/images/megamenu/product-1.jpg'%}"
+                                                        alt="image"
+                                                        title="Naminos elementum disus tincidunts cosmo de cosmopolis" /></a>
+                                                <div class="pro-details">
+                                                    <h4><a href="#">Naminos elementum disus
+                                                            tincidunts cosmo de
+                                                            cosmopolis</a></h4>
+                                                    <p class="star-rating">
+                                                        <i class="spr-icon fa fa-star"></i>
+                                                        <i class="spr-icon fa fa-star"></i>
+                                                        <i class="spr-icon fa fa-star"></i>
+                                                        <i class="spr-icon fa fa-star-o"></i>
+                                                        <i class="spr-icon fa fa-star-o"></i>
+                                                    </p>
+                                                    <p><span class="compare">600.00</span> <span>550.00</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
+                                            <a href="#"><img class="img-fluid blur-up lazyload"
+                                                    src="{% static 'website/images/megamenu/image-1.jpg'%}"
+                                                    data-src="{% static 'website/images/megamenu/image-1.jpg'%}" alt="image"
+                                                    title="image" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Megamenu Style 1 -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop
+                                <span class="arw plush" title="Click to show/hide"></span>
+                            </a>
+                            <!-- Start Megamenu Style 2 -->
+                            <div class="megamenu submenu style2">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-lg-6">
+                                            <div class="row">
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-4">
+                                                    <h3>Shop pages</h3>
+                                                    <ul>
+                                                        <li><a class="item" href="#">Cart</a></li>
+                                                        <li><a class="item" href="#">Checkout</a>
+                                                        </li>
+                                                        <li><a class="item" href="#">Wishlist</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
+                                            <div class="row">
+                                                <div class="col-sm-12 img1">
+                                                    <a href="#"><img class="img-fluid blur-up lazyload"
+                                                            src="{% static 'website/images/megamenu/image-2.jpg'%}"
+                                                            data-src="{% static 'website/images/megamenu/image-2.jpg'%}"
+                                                            alt="image" title="image" /></a>
+                                                </div>
+                                                <div class="col-sm-12 img2">
+                                                    <a href="#"><img class="img-fluid blur-up lazyload"
+                                                            src="{% static 'website/images/megamenu/image-2.jpg'%}"
+                                                            data-src="{% static 'website/images/megamenu/image-2.jpg'%}"
+                                                            alt="image" title="image" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="megamenu-lvl banner-col col-12 col-sm-12 col-lg-3">
+                                            <a href="#"><img class="img-fluid blur-up lazyload"
+                                                    src="{% static 'website/images/megamenu/image-1.jpg'%}"
+                                                    data-src="{% static 'website/images/megamenu/image-1.jpg'%}" alt="image"
+                                                    title="image" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Megamenu Style 2 -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Products
+                                <span class="arw plush" title="Click to show/hide"></span>
+                                <span class="lbl new">New</span>
+                            </a>
+                            <!-- Start Megamenu Style 3 -->
+                            <div class="megamenu submenu style3">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
+                                                    <h3>New Arrival</h3>
+                                                    <ul>
+                                                        <li class="item-img"><a href="#" class="img"><img
+                                                                    class="img-fluid blur-up lazyload"
+                                                                    src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    data-src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    alt="image" title="image" /></a></li>
+                                                        <li><a class="item" href="#">Collections Pages</a></li>
+                                                        <li><a class="item" href="#">Shop pages</a></li>
+                                                        <li><a class="item" href="#">Product pages</a></li>
+                                                        <li><a class="item" href="#">Blog Pages</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
+                                                    <h3>Tires Manufacturing</h3>
+                                                    <ul>
+                                                        <li class="item-img"><a href="#" class="img"><img
+                                                                    class="img-fluid blur-up lazyload"
+                                                                    src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    data-src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    alt="image" title="image" /></a></li>
+                                                        <li><a class="item" href="#">Login</a></li>
+                                                        <li><a class="item" href="#">Register</a></li>
+                                                        <li><a class="item" href="#">My Wishlist</a></li>
+                                                        <li><a class="item" href="#">Shopping Cart</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
+                                                    <h3>Electrical system</h3>
+                                                    <ul>
+                                                        <li class="item-img"><a href="#" class="img"><img
+                                                                    class="img-fluid blur-up lazyload"
+                                                                    src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    data-src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    alt="image" title="image" /></a></li>
+                                                        <li><a class="item" href="#">Our Store</a></li>
+                                                        <li><a class="item" href="#">Company Info</a></li>
+                                                        <li><a class="item" href="#">Favorites</a></li>
+                                                        <li><a class="item" href="#">Private Policy</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="megamenu-lvl col-12 col-sm-12 col-lg-3">
+                                                    <h3>Other components</h3>
+                                                    <ul>
+                                                        <li class="item-img"><a href="#" class="img"><img
+                                                                    class="img-fluid blur-up lazyload"
+                                                                    src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    data-src="{% static 'website/images/megamenu/image-3.jpg'%}"
+                                                                    alt="image" title="image" /></a></li>
+                                                        <li><a class="item" href="#">Order Status</a></li>
+                                                        <li><a class="item" href="#">Shipping & Returns</a></li>
+                                                        <li><a class="item" href="#">Shipping & Deliveries</a>
+                                                        </li>
+                                                        <li><a class="item" href="#">Terms & Conditions</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Megamenu Style 3 -->
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">Pages
+                                <span class="arw plush" title="Click to show/hide"></span>
+                            </a>
+                            <!-- Start Megamenu Dropdown -->
+                            <div class="megamenu submenu dropdown">
+                                <ul>
+                                    <li><a class="item" href="#">About Us</a></li>
+                                    <li><a class="item" href="#">FAQ's</a></li>
+                                    <li><a class="item" href="#">Contact Us</a></li>
+                                    <li><a class="item" href="#">Coming Soon</a></li>
+                                    <li><a class="item" href="#">Order Tracking</a></li>
+                                    <li><a class="item" href="#">Compare</a></li>
+                                    <li class="dropmenu">
+                                        <a class="item" href="#">My Account <span class="arw plush"
+                                                title="Click to show/hide"></span></a>
+                                        <ul class="droplink submenu1">
+                                            <li><a class="item" href="#">My Account</a></li>
+                                            <li><a class="item" href="#">Login</a></li>
+                                            <li><a class="item" href="#">Register</a></li>
+                                            <li><a class="item" href="#">Forgot Password</a></li>
+                                            <li><a class="item" href="#">Change Password</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropmenu">
+                                        <a class="item" href="#">Wishlist <span class="arw plush"
+                                                title="Click to show/hide"></span></a>
+                                        <ul class="droplink submenu1">
+                                            <li><a class="item" href="#">Wishlist Login</a></li>
+                                            <li><a class="item" href="#">Wishlist</a></li>
+                                            <li><a class="item" href="#">Empty Wishlist</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropmenu">
+                                        <a class="item" href="#">Cart <span class="arw plush"
+                                                title="Click to show/hide"></span></a>
+                                        <ul class="droplink submenu1">
+                                            <li><a class="item" href="#">Cart</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropmenu">
+                                        <a class="item" href="#">Checkout <span class="arw plush"
+                                                title="Click to show/hide"></span></a>
+                                        <ul class="droplink submenu1">
+                                            <li><a class="item" href="#">Checkout</a></li>
+                                            <li><a class="item" href="#">Checkout Success</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropmenu">
+                                        <a class="item" href="#">Empty Pages <span class="arw plush"
+                                                title="Click to show/hide"></span></a>
+                                        <ul class="droplink submenu1">
+                                            <li><a class="item" href="#">Empty Cart</a></li>
+                                            <li><a class="item" href="#">Empty Category</a></li>
+                                            <li><a class="item" href="#">Empty Compare</a></li>
+                                            <li><a class="item" href="#">Empty Search</a></li>
+                                            <li><a class="item" href="#">Empty Wishlist</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Megamenu Dropdown -->
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- Start Navigation -->
+            <!-- Start Right Menu -->
+            <div class="col-6 col-md-6 col-lg-2 p-0 right-side">
+                <!-- Start Minicart -->
+                <div class="minicart float-right">
+                    <a href="#" class="cart-btn" title="Cart" data-toggle="modal" data-target="#mycartdrawer">
+                        <i class="icon ti-shopping-cart"></i>
+                        <div class="cart-count">
+                            <span id="count">4</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Minicart -->
+                <!-- Start Search Box -->
+                <div class="search-box float-right">
+                    <a href="#" title="Search" class="search-open search-toggle" data-toggle="modal"
+                        data-target="#searchform">
+                        <i class="icon ti-search"></i>
+                    </a>
+                </div>
+                <!-- End Search Show -->
+            </div>
+            <!-- End Right Menu -->
+        </div>
+    </div>
+    <!-- End Main Header -->
+</header>

@@ -1,0 +1,83 @@
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item nav-profile">
+        <div class="nav-link">
+          <div class="profile-image">
+            <img src="{% static 'admin/images/faces/face5.jpg'%}" alt="image">
+          </div>
+          <div class="profile-name">
+            <p class="name">
+              Welcome
+            </p>
+            <p class="designation">
+              Super Admin
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'admin_index'%}">
+          <i class="fa fa-home menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'orders'%}">
+          <i class="fa fa-puzzle-piece menu-icon"></i>
+          <span class="menu-title">Orders</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <i class="fas fa-window-restore menu-icon"></i>
+          <span class="menu-title">Product</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{% url 'add_product'%}"> Add Product </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'view_product'%}"> View Product </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+          <i class="fas fa-exclamation-circle menu-icon"></i>
+          <span class="menu-title">Management</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="error">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{% url 'category'%}"> Categorry </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false"
+          aria-controls="general-pages">
+          <i class="fas fa-file menu-icon"></i>
+          <span class="menu-title">Users</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="general-pages">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{% url 'view_user'%}"> View Users </a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="false"
+          aria-controls="e-commerce">
+          <i class="fas fa-shopping-cart menu-icon"></i>
+          <span class="menu-title">E-commerce</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="e-commerce">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{% url 'invoice'%}"> Invoice </a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>

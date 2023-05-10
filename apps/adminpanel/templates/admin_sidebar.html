@@ -53,6 +53,7 @@
           </ul>
         </div>
       </li>
+      {% if request.user.is_superuser  %}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false"
           aria-controls="general-pages">
@@ -66,6 +67,7 @@
           </ul>
         </div>
       </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="false"
           aria-controls="e-commerce">

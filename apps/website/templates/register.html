@@ -35,7 +35,8 @@
                                     your order status and history.
                                 </p>
                             </div>
-                            <form action="{% url 'register'%}" class="register-form needs-validation" novalidate>
+                            <form action="{% url 'register'%}" class="register-form needs-validation" novalidate method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>First Name *</label>
@@ -72,7 +73,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group button-action mt-1 mt-sm-1 clearfix text-center">
-                                    <a href="{% url 'login'%}" type="submit" class="account-create btn btn-secondary">CREATE AN ACCOUNT</a>
+                                    <input type="submit" class="account-create btn btn-secondary" value="Create Account"/>
                                 </div>
                             </form>
                         </div>

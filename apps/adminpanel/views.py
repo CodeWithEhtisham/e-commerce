@@ -1,8 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.contrib.auth.decorators import login_required
+
+# @login_required
 def admin_index(request):
-    return render(request, 'admin_index.html')
+    print(request.user.is_authenticated)
+    if request.user.is_authenticated:
+        return render(request, 'admin_index.html')
+    else:
+        return render(request, 'login.html')
+
 
 def orders(request):
     return render(request, 'orders.html')

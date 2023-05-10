@@ -155,7 +155,7 @@
                             <!-- End Payment Method -->
 
                             <div class="form-group mt-5">
-                                <a href="checkout-success.html"
+                                <a href="{% url 'checkout_success'%}"
                                     class="btn btn-primary btn-lg btn-block place-order-btn">Place order</a>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
 
     <!-- ******** JS Files ******** -->
     <!-- Plugin JS -->
-    {% include 'scripts.html'%}
+    {% include 'script.html'%}
 
 </body>
 {% endblock %}

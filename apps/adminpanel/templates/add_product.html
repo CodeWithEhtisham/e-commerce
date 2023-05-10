@@ -1,11 +1,11 @@
 
-{% extends 'base.html'%}
+{% extends 'admin_base.html'%}
 {% load static %}
 {% block content%}
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
-        {% include 'header.html'%}
+        {% include 'admin_header.html'%}
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
@@ -195,7 +195,7 @@
             </div>
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
-            {% include 'sidebar.html'%}
+            {% include 'admin_sidebar.html'%}
             <!-- Main -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -306,7 +306,7 @@
     </div>
     <!-- container-scroller -->
 
-    {% include 'script.html'%}
+    {% include 'admin_script.html'%}
 </body>
 
 {%endblock%}

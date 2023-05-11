@@ -3,8 +3,12 @@ from .models import CustomUser
 from django.contrib.auth import logout, login, authenticate
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from apps.adminpanel.models import Product
 # Create your views here.
 def index(request):
+    if request.method=="POST":
+        pass
+    products = Product.objects.all().order_by('-id')[:4]
     return render(request, 'index.html')
 
 

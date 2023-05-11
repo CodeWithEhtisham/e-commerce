@@ -11,7 +11,7 @@
               Welcome
             </p>
             <p class="designation">
-              Super Admin
+              {{request.user.username}}
             </p>
           </div>
         </div>
@@ -36,7 +36,9 @@
         </a>
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
+            {% if not request.user.is_superuser %}
             <li class="nav-item"> <a class="nav-link" href="{% url 'add_product'%}"> Add Product </a></li>
+            {%endif%}
             <li class="nav-item"> <a class="nav-link" href="{% url 'view_product'%}"> View Product </a></li>
           </ul>
         </div>

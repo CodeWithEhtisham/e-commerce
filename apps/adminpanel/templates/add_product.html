@@ -210,7 +210,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Add</h4>
-                                    <form class="forms-sample" action="{% url 'add_product'%}" method="post">
+                                    <form class="forms-sample" action="{% url 'add_product'%}" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group row">
@@ -281,7 +282,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">City</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="city" required/>
+                                                        <input type="text" class="form-control" name="p-city" required/>
                                                     </div>
                                                 </div>
                                             </div>

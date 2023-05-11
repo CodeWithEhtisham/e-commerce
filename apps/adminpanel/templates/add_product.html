@@ -1,7 +1,7 @@
-
 {% extends 'admin_base.html'%}
 {% load static %}
 {% block content%}
+
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
@@ -132,8 +132,8 @@
                         </div>
                         <ul class="chat-list">
                             <li class="list active">
-                                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face1.jpg'%}"
+                                        alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Thomas Douglas</p>
                                     <p>Available</p>
@@ -141,8 +141,8 @@
                                 <small class="text-muted my-auto">19 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span
-                                        class="offline"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face2.jpg'%}"
+                                        alt="image"><span class="offline"></span></div>
                                 <div class="info">
                                     <div class="wrapper d-flex">
                                         <p>Catherine</p>
@@ -153,8 +153,8 @@
                                 <small class="text-muted my-auto">23 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face3.jpg'%}"
+                                        alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Daniel Russell</p>
                                     <p>Available</p>
@@ -162,8 +162,8 @@
                                 <small class="text-muted my-auto">14 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span
-                                        class="offline"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face4.jpg'%}"
+                                        alt="image"><span class="offline"></span></div>
                                 <div class="info">
                                     <p>James Richardson</p>
                                     <p>Away</p>
@@ -171,8 +171,8 @@
                                 <small class="text-muted my-auto">2 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face5.jpg'%}"
+                                        alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Madeline Kennedy</p>
                                     <p>Available</p>
@@ -180,8 +180,8 @@
                                 <small class="text-muted my-auto">5 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="{% static 'admin/images/faces/face6.jpg'%}"
+                                        alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Sarah Graves</p>
                                     <p>Available</p>
@@ -210,13 +210,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Add</h4>
-                                    <form class="forms-sample">
+                                    <form class="forms-sample" action="{% url 'add_product'%}" method="post">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Name</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="p-name" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -224,7 +224,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Title</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="p-title" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -234,7 +234,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Quantity</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="p-quantity" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -242,7 +242,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Category</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="p-category" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -252,7 +252,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Price</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="p-price" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,7 +260,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Image</label>
                                                     <div class="col-sm-9">
-                                                        <input type="file" class="form-control" />
+                                                        <input type="file" class="form-control" name="p-image" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -270,9 +270,9 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">Type</label>
                                                     <div class="col-sm-9">
-                                                        <select class="form-control">
-                                                            <option>New</option>
-                                                            <option>Old</option>
+                                                        <select class="form-control" name="p-type" required>
+                                                            <option value="New">New</option>
+                                                            <option value="Old">Old</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -281,15 +281,15 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-3 col-form-label">City</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" name="city" required/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="form-group">
                                             <label for="exampleTextarea1">Description</label>
-                                            <textarea class="form-control" id="exampleTextarea1" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleTextarea1" name="p-description" rows="3"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                         <button class="btn btn-light">Cancel</button>

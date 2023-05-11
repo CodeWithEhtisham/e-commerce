@@ -50,7 +50,7 @@ def register(request):
         password = request.POST['password']
         contact= request.POST['contact']
         address = request.POST['address']
-        print(first_name, last_name, email, password, contact, address)
+        # print(first_name, last_name, email, password, contact, address)
         try:
             CustomUser.objects.create_user(username=first_name,first_name=first_name, last_name=last_name, email=email, password=password, contact=contact, address=address)
             return render(request, 'login.html', {'success': 'User created successfully'})

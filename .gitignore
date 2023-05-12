@@ -7,9 +7,9 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
+# db.sqlite3
 db.sqlite3-journal
-media/product_images/*
+# media/product_images/*
 *.onnx
 *.pt
 *.trt

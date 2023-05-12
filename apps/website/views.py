@@ -9,7 +9,11 @@ def index(request):
     if request.method=="POST":
         pass
     products = Product.objects.all().order_by('-id')[:4]
-    return render(request, 'index.html')
+    for i in products:
+        print(i.name)
+    return render(request, 'index.html',{
+        'products':products
+        })
 
 
 def login_user(request):

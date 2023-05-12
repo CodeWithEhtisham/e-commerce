@@ -64,8 +64,9 @@
                     <div class="tab-content responsiveTabs">
                         <!-- Start Tab1 -->
                         <h3 class="d_active tab-drawer-heading" data-tab="tab1"><a>Interior</a></h3>
-                        <div id="tab1" class="drawertab-content">
+                        <div  class="drawertab-content">
                             <div class="row row-sp row-eq-height">
+                                {% for p in products %}
                                 <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                                     <div class="product-item">
                                         <div class="product-image-action">
@@ -75,13 +76,13 @@
                                             </div>
                                             <div class="product-image">
                                                 <a href="{% url 'product_details'%}">
-                                                    <img class="img-fluid blur-up lazyload primary-img"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
+                                                    <img class="img-fluid blur-up lazyload primary-img" style="width: 300px; height: 300px;"
+                                                        src="media/{{p.Image}}"
+                                                        data-src="media/{{p.Image}}" alt="image"
                                                         title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover secondary-img"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
+                                                    <img class="img-fluid blur-up lazyload product-imghover secondary-img" style="width: 300px; height: 300px;"
+                                                        src="media/{{p.Image}}"
+                                                        data-src="media/{{p.Image}}" alt="image"
                                                         title="image" />
                                                 </a>
                                             </div>
@@ -111,9 +112,8 @@
                                             </div>
                                         </div>
                                         <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Donec pede justo
-                                                    fringilla</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
+                                            <h3 class="product-title"><a href="{% url 'product_details'%}">{{p.name}}</a></h3>
+                                            <h4 class="product-vendor">{{p.category}}</h4>
                                             <div class="product-starrating">
                                                 <i class="spr-icon fa fa-star"></i>
                                                 <i class="spr-icon fa fa-star"></i>
@@ -122,13 +122,13 @@
                                                 <i class="spr-icon fa fa-star-o"></i>
                                             </div>
                                             <div class="product-price">
-                                                <span class="compare-price">125.22</span>
-                                                <span class="sale-price">113.88</span>
+                                                <!-- <span class="compare-price">125.22</span> -->
+                                                <span class="sale-price">{{p.price}}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                <!-- <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                                     <div class="product-item">
                                         <div class="product-image-action">
                                             <div class="product-label">
@@ -306,7 +306,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+                                {%endfor%} 
                             </div>
                             <!-- Start Load More Button -->
                             <div class="product-readmore text-center">

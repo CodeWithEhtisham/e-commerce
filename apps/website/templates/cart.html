@@ -52,18 +52,19 @@
                                     </thead>
                                     <tbody>
                                         {% for c in carts %}
+                                        {{c}}
                                         <tr>
-                                            <td class="pro-img text-center"><a href="{% url 'product_details' c.product.id %}"><img
+                                            <td class="pro-img text-center"><a href="#"><img
                                                         class="img-fluid blur-up lazyload"
-                                                        src="{% get_media_prefix %}{{c.product.Image}}"
-                                                        data-src="{% get_media_prefix %}{{c.product.Image}}"
+                                                        src="{% get_media_prefix %}{{c.Image}}"
+                                                        data-src="{% get_media_prefix %}{{c.Image}}"
                                                         alt="image" title="image" width="100" /></a></td>
                                             <td class="pro-del text-center text-sm-left">
-                                                <p class="mb-1 pro-name"><a>{{c.product.name}}</a></p>
+                                                <p class="mb-1 pro-name"><a>{{c.name}}</a></p>
                                                 <p class="mb-1">Size: Small</p>
                                                 <p class="mb-1">Color: Black</p>
                                             </td>
-                                            <td class="pro-price text-center">{{c.product.price}}</td>
+                                            <td class="pro-price text-center">{{c.price}}</td>
                                             <td class="pro-qty text-center">
                                                 <div class="qty-box">
                                                     <button type="button" class="qtyminus button" value=""><i

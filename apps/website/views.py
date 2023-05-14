@@ -4,6 +4,28 @@ from django.contrib.auth import logout, login, authenticate
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from apps.adminpanel.models import Product
+
+from django.shortcuts import get_object_or_404, redirect
+# from .models import Product
+from django.conf import settings
+# from  import get_cart, CART_SESSION_KEY
+
+def get_cart(request):
+    cart = request.session.get(settings.CART_SESSION_KEY, [])
+    request.session[settings.CART_SESSION_KEY] = cart
+    return cart
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    cart = get_cart(request)
+
+    # Add the product to the session cart
+    cart.append(product.id)
+
+    cart = get_cart(request)
+    products = Product.objects.filter(id__in=cart)
+
+    return render(request, 'cart.html', {'carts': products})
+
 # Create your views here.
 def index(request):
     if request.method=="POST":
@@ -76,25 +98,30 @@ def shop_grid_fullwidth(request):
     })
 
 from django.db.models import Sum
-def cart(request,product_id=None):
-    if product_id:
-        product = Product.objects.get(id=product_id)
-        if AddToCart.objects.filter(product=product, user=request.user).exists():
-            cart = AddToCart.objects.get(product=product, user=request.user)
-            cart.quantity = cart.quantity + 1
-            cart.total_price = cart.quantity * product.price
-            cart.save()
-        else:
-            cart = AddToCart.objects.create(product=product, user=request.user)
-            cart.quantity = 1
-            cart.total_price = product.price
-            cart.save()
-    carts = AddToCart.objects.filter(user=request.user).select_related('product').order_by('-id')
-    sub_total = carts.aggregate(Sum('total_price'))['total_price__sum']
-    return render(request, 'cart.html',{    
-        'carts':carts,
-        'sub_total':sub_total
-        })
+def carts(request):
+    # if product_id:
+    #     product = Product.objects.get(id=product_id)
+    #     if AddToCart.objects.filter(product=product, user=request.user).exists():
+    #         cart = AddToCart.objects.get(product=product, user=request.user)
+    #         cart.quantity = cart.quantity + 1
+    #         cart.total_price = cart.quantity * product.price
+    #         cart.save()
+    #     else:
+    #         cart = AddToCart.objects.create(product=product, user=request.user)
+    #         cart.quantity = 1
+    #         cart.total_price = product.price
+    #         cart.save()
+    # carts = AddToCart.objects.filter(user=request.user).select_related('product').order_by('-id')
+    # sub_total = carts.aggregate(Sum('total_price'))['total_price__sum']
+    # return render(request, 'cart.html',{    
+    #     'carts':carts,
+    #     'sub_total':sub_total
+    #     })
+
+    cart = get_cart(request)
+    products = Product.objects.filter(id__in=cart)
+
+    return render(request, 'cart.html', {'products': products})
 
 
 def checkout(request):

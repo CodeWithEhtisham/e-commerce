@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import CustomUser
+from .models import CustomUser, AddToCart
 from django.contrib.auth import logout, login, authenticate
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -70,11 +70,32 @@ def register(request):
 
 
 def shop_grid_fullwidth(request):
-    return render(request, 'shop_grid_fullwidth.html')
+    products=Product.objects.all().order_by('-id')
+    return render(request, 'shop-grid-fullwidth.html',{
+        'products':products
+    })
 
+from django.db.models import Sum
+def cart(request,product_id=None):
+    if product_id:
+        product = Product.objects.get(id=product_id)
+        if AddToCart.objects.filter(product=product, user=request.user).exists():
+            cart = AddToCart.objects.get(product=product, user=request.user)
+            cart.quantity = cart.quantity + 1
+            cart.total_price = cart.quantity * product.price
+            cart.save()
+        else:
+            cart = AddToCart.objects.create(product=product, user=request.user)
+            cart.quantity = 1
+            cart.total_price = product.price
+            cart.save()
+    carts = AddToCart.objects.filter(user=request.user).select_related('product').order_by('-id')
+    sub_total = carts.aggregate(Sum('total_price'))['total_price__sum']
+    return render(request, 'cart.html',{    
+        'carts':carts,
+        'sub_total':sub_total
+        })
 
-def cart(request):
-    return render(request, 'cart.html')
 
 def checkout(request):
     return render(request, 'checkout.html')

@@ -51,32 +51,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for c in carts %}
                                         <tr>
-                                            <td class="pro-img text-center"><a href="product-details.html"><img
+                                            <td class="pro-img text-center"><a href="{% url 'product_details' c.product.id %}"><img
                                                         class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-100x100.jpg"
-                                                        data-src="assets/images/products/product-100x100.jpg"
+                                                        src="{% get_media_prefix %}{{c.product.Image}}"
+                                                        data-src="{% get_media_prefix %}{{c.product.Image}}"
                                                         alt="image" title="image" width="100" /></a></td>
                                             <td class="pro-del text-center text-sm-left">
-                                                <p class="mb-1 pro-name"><a href="product-details.html">Donec pede justo
-                                                        fringilla</a></p>
+                                                <p class="mb-1 pro-name"><a>{{c.product.name}}</a></p>
                                                 <p class="mb-1">Size: Small</p>
                                                 <p class="mb-1">Color: Black</p>
                                             </td>
-                                            <td class="pro-price text-center">376.00</td>
+                                            <td class="pro-price text-center">{{c.product.price}}</td>
                                             <td class="pro-qty text-center">
                                                 <div class="qty-box">
                                                     <button type="button" class="qtyminus button" value=""><i
                                                             class="fa fa-minus"></i></button>
-                                                    <input type="text" name='quantity' value='1' class="qty-input" />
+                                                    <input type="text" name='quantity' value='{{c.quantity}}' class="qty-input" />
                                                     <button type="button" class="qtyplus button" value=""><i
                                                             class="fa fa-plus"></i></button>
                                                 </div>
                                                 <a class="qty-remove ml-3" href="#"><i class="ti-close"></i></a>
                                             </td>
-                                            <td class="pro-total text-center">376.00</td>
+                                            <td class="pro-total text-center">{{c.total_price}}</td>
                                         </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -84,7 +84,7 @@
                             <!-- Start Cart Action Button -->
                             <div class="cart-table-action clearfix">
                                 <a href="#" class="btn btn-secondary pull-left">Update Cart</a>
-                                <a href="#" class="btn btn-secondary pull-right">Continue Shopping</a>
+                                <a href="{% url 'index' %}" class="btn btn-secondary pull-right">Continue Shopping</a>
                             </div>
                             <!-- End Cart Action Button -->
                             
@@ -110,7 +110,7 @@
                                 <!-- Start Cart Sub Total -->
                                 <div class="cart-subtotal clearfix">
                                     <p class="subtle-title m-0 pull-left text-uppercase">Subtotal</p>
-                                    <p class="sabtotal m-0 pull-right">1206.80</p>
+                                    <p class="sabtotal m-0 pull-right">{{sub_total}}</p>
                                 </div>
                                 <!-- End Cart Sub Total -->
                                 <!-- Start Cart Checkout Button -->
@@ -124,13 +124,13 @@
                             <div class="checkout-card">
                                 <div class="ssl-safe clearfix mb-3">
                                     <img class="img-fluid blur-up lazyload float-left"
-                                        src="assets/images/others/ssl-certificate.png" alt="image"
+                                        src="{% static 'website/images/others/ssl-certificate.png' %}" alt="image"
                                         title="Secure SSL certificate" />
                                     <img class="img-fluid blur-up lazyload float-left"
-                                        src="assets/images/others/safe-checkout.png" alt="image"
+                                        src="{% static 'website/images/others/safe-checkout.png' %}" alt="image"
                                         title="Granted safe checkout" />
                                 </div>
-                                <img class="img-fluid blur-up lazyload" src="assets/images/icons/checkout-card.png"
+                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/checkout-card.png' %}"
                                     alt="image" title="Checkout Card" />
                             </div>
                             <!-- End Checkout Card -->
@@ -193,8 +193,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg' %}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg' %}" alt="image"
                                         title="Donec pede justo fringilla" />
                                 </a>
                             </div>
@@ -212,8 +212,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg' %}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg' %}" alt="image"
                                         title="Sociosqu facilisi senectus nisi etiam" />
                                 </a>
                             </div>
@@ -231,8 +231,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg' %}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg' %}" alt="image"
                                         title="Nullam scelerisque suscipit sociis" />
                                 </a>
                             </div>
@@ -250,8 +250,8 @@
                             <div class="pro-img d-table-cell align-middle">
                                 <a href="product-details.html">
                                     <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
+                                        src="{% static 'website/images/products/cart-pro-76x76.jpg' %}"
+                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg' %}" alt="image"
                                         title="Pellentesque habitant morbi" />
                                 </a>
                             </div>
@@ -303,6 +303,15 @@
     <!--  End Main Wrapper -->
 
     {% include 'script.html'%}
-
+    <script>
+        $(document).ready(function () {
+            $('.cart').on('click', function () {
+                $('.shopping-cart-content').addClass('cart-open');
+            });
+            $('.close-shopping-cart').on('click', function () {
+                $('.shopping-cart-content').removeClass('cart-open');
+            });
+        });
+    </script>
 </body>
     {% endblock%}

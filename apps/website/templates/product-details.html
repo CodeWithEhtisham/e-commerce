@@ -256,7 +256,7 @@
                                         <!-- End Product Quantity -->
                                         <!-- Start Product Add Cart -->
                                         <div class="product-form-item product-submit btn-block">
-                                            <a href="{% url 'cart'%}" class="btn btn-primary btn-block product-btn-cart add-cart">Add to Cart</a>
+                                            <a href="{% url 'cart' sp.id %}" class="btn btn-primary btn-block product-btn-cart add-cart">Add to Cart</a>
                                         </div>
                                         <!-- End Product Add Cart -->
                                         <!-- Start Product Buy Now -->
@@ -882,7 +882,7 @@
                             </div>
                         </div>
                         <div class="actions d-inline-block w-100 text-center">
-                            <a class="btn btn-primary d-block mb-4 font-sm-14" href="{% url 'cart'%}">View Cart</a>
+                            <a class="btn btn-primary d-block mb-4 font-sm-14" href="{% url 'cart' sp.id %}">View Cart</a>
                             <a class="btn btn-secondary d-block font-sm-14" href="{% url 'checkout'%}">Proceed to checkout</a>
                         </div>
                     </div>
@@ -906,7 +906,7 @@
                     </div>
                     <div class="button-action">
                         <button class="btn btn-secondary btn-block mb-3 continue-shopping close-popup">Continue Shopping</button>
-                        <a href="{% url 'cart'%}" class="btn btn-primary btn-block view-cart">View Cart</a>
+                        <a href="{% url 'cart' sp.id %}" class="btn btn-primary btn-block view-cart">View Cart</a>
                     </div>
                 </div>
             </div>
@@ -1047,7 +1047,7 @@
                             </div>
                         </div>
                         <div class="sticky-cart-btn">
-                            <a href="{% url 'cart'%}" class="btn btn-primary">Add to cart</a>
+                            <a href="{% url 'cart' sp.id %}" class="btn btn-primary">Add to cart</a>
                         </div>
                     </div>
                 </div>

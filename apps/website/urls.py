@@ -13,11 +13,11 @@ urlpatterns = [
     path('checkout', views.checkout, name='checkout'),
     path('checkout_success', views.checkout_success, name='checkout_success'),
     path('collections', views.collections, name='collections'),
-    path('product_details', views.product_details, name='product_details'),
+    path('product_details/<int:product_id>/', views.product_details, name='product_details'),
     path('logout', views.logout_user, name='logout'),
-]
-# Serving the media files in development mode
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    urlpatterns += staticfiles_urlpatterns()
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# # Serving the media files in development mode
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# else:
+#     urlpatterns += staticfiles_urlpatterns()

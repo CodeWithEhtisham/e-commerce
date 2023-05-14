@@ -28,7 +28,7 @@
                     <div class="container">
                         <h1>Product Detail Default </h1>
                         <ul class="breadcrumb bg-transparent m-0 p-0 justify-content-center">
-                            <li class="breadcrumb-item"><a href="index.html" title="Home">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'index'%}" title="Home">Home</a></li>
                             <li class="breadcrumb-item active">Product Detail Default </li>
                         </ul>
                     </div>
@@ -54,19 +54,19 @@
                                         <!-- Start Product Single Images -->
                                         <div class="product-single-photo slider thumbnails-single">
                                             <div class="single-item zoom product-gallery-image">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-800x800.jpg" data-src="assets/images/products/product-detail-800x800.jpg" alt="image" title="image" />
+                                                <img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" />
                                             </div>
                                             <div class="single-item zoom product-gallery-image">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-800x800.jpg" data-src="assets/images/products/product-detail-800x800.jpg" alt="image" title="image" />
+                                                <img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" />
                                             </div>
                                             <div class="single-item zoom product-gallery-image">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-800x800.jpg" data-src="assets/images/products/product-detail-800x800.jpg" alt="image" title="image" />
+                                                <img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" />
                                             </div>
                                             <div class="single-item zoom product-gallery-image">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-800x800.jpg" data-src="assets/images/products/product-detail-800x800.jpg" alt="image" title="image" />
+                                                <img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" />
                                             </div>
                                             <div class="single-item zoom product-gallery-image">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-800x800.jpg" data-src="assets/images/products/product-detail-800x800.jpg" alt="image" title="image" />
+                                                <img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" />
                                             </div>
                                         </div>  
                                         <!-- End Product Single Images -->
@@ -89,11 +89,11 @@
 
                                     <!-- Start Product Thumb Images -->
                                     <div class="product-thumb slider thumbnail-items">
-                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-125x125.jpg" data-src="assets/images/products/product-detail-125x125.jpg" alt="image" title="image" /></div>
-                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-125x125.jpg" data-src="assets/images/products/product-detail-125x125.jpg" alt="image" title="image" /></div>
-                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-125x125.jpg" data-src="assets/images/products/product-detail-125x125.jpg" alt="image" title="image" /></div>
-                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-125x125.jpg" data-src="assets/images/products/product-detail-125x125.jpg" alt="image" title="image" /></div>
-                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/product-detail-125x125.jpg" data-src="assets/images/products/product-detail-125x125.jpg" alt="image" title="image" /></div>
+                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" /></div>
+                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" /></div>
+                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" /></div>
+                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" /></div>
+                                        <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% get_media_prefix %}{{sp.Image}}" data-src="{% get_media_prefix %}{{sp.Image}}" alt="image" title="image" /></div>
                                     </div>
                                     <!-- End Product Thumb Images -->
                                 </div>
@@ -105,7 +105,7 @@
                                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                             <div class="info-area d-table clearfix">
                                                 <div class="info-icon d-table-cell align-middle">
-                                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/free-shipping.png" data-src="assets/images/icons/free-shipping.png" alt="image" title="image" />
+                                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/free-shipping.png'%}" data-src="{% static 'website/images/icons/free-shipping.png'%}" alt="image" title="image" />
                                                 </div>
                                                 <div class="info-details d-table-cell align-middle">
                                                     <h5>Free &amp; Fast Shipping</h5>
@@ -116,7 +116,7 @@
                                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                             <div class="info-area d-table">
                                                 <div class="info-icon d-table-cell align-middle">
-                                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/safe-payment.png" data-src="assets/images/icons/safe-payment.png" alt="image" title="image" />
+                                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/safe-payment.png'%}" data-src="{% static 'website/images/icons/safe-payment.png'%}" alt="image" title="image" />
                                                 </div>
                                                 <div class="info-details d-table-cell align-middle">
                                                     <h5>Safe Payment</h5>
@@ -129,7 +129,7 @@
                                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                             <div class="info-area d-table">
                                                 <div class="info-icon d-table-cell align-middle">
-                                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/return-exchange.png" data-src="assets/images/icons/return-exchange.png" alt="image" title="image" />
+                                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/return-exchange.png'%}" data-src="{% static 'website/images/icons/return-exchange.png'%}" alt="image" title="image" />
                                                 </div>
                                                 <div class="info-details d-table-cell align-middle">
                                                     <h5>Return &amp; Exchange</h5>
@@ -140,7 +140,7 @@
                                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                                             <div class="info-area d-table">
                                                 <div class="info-icon d-table-cell align-middle">
-                                                    <img class="img-fluid blur-up lazyload" src="assets/images/icons/support-24.png" data-src="assets/images/icons/support-24.png" alt="image" title="image" />
+                                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/support-24.png'%}" data-src="{% static 'website/images/icons/support-24.png'%}" alt="image" title="image" />
                                                 </div>
                                                 <div class="info-details d-table-cell align-middle">
                                                     <h5>Support 24/7</h5>
@@ -168,7 +168,7 @@
                                             <span>4 Reviews</span>
                                         </div>
                                         <div class="pro-arrow pull-right">
-                                            <a class="pro-next" href="product-details.html"><i class="ti-angle-left"></i></a>
+                                            <a class="pro-next" href="{% url 'product_details' 2%}"><i class="ti-angle-left"></i></a>
                                             <a class="pro-prev" href="product-details-classic.html"><i class="ti-angle-right"></i></a>
                                         </div>
                                     </div>
@@ -182,8 +182,8 @@
 
                                 <!-- Start Product Price -->
                                 <ul class="d-sm-flex flex-sm-row align-items-sm-center product-price-info">
-                                    <li class="product-price m-0"><span class="compare-price">$499.00</span><span class="sale-price">$399.00</span></li>
-                                    <li class="save-price">You Save <span class="save-count">$100.00 (10%)</span></li>
+                                    <li class="product-price m-0"><span class="compare-price">${{sp.price}}</span><span class="sale-price">${{ sp.price|add:"-10" }}</span></li>
+                                    <li class="save-price">You Save <span class="save-count">$10.00 (1%)</span></li>
                                 </ul>
                                 <!-- End Product Price -->
 
@@ -334,7 +334,7 @@
                                                                     </table>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-md-6 text-center size-chart-img">
-                                                                    <img class="img-fluid blur-up lazyload" src="assets/images/others/size-chart.png" data-src="assets/images/others/size-chart.png" alt="image" title="image" />
+                                                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/others/size-chart.png'%}" data-src="{% static 'website/images/others/size-chart.png'%}" alt="image" title="image" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -401,7 +401,7 @@
                                 <div class="checkout-safe">
                                     <fieldset>
                                         <legend>Guaranteed Safe Checkout</legend>
-                                        <img class="img-fluid" src="assets/images/icons/checkout-icon.png" alt="Guaranteed Safe Checkout" title="Guaranteed Safe Checkout" />
+                                        <img class="img-fluid" src="{% static 'website/images/icons/checkout-icon.png'%}" alt="Guaranteed Safe Checkout" title="Guaranteed Safe Checkout" />
                                     </fieldset>
                                 </div>
                                 <!-- Start Product Checkout Info -->
@@ -454,10 +454,10 @@
                                 <div class="product-info-img">
                                     <div class="row">
                                         <div class="col-12 col-sm-6 col-md-6">
-                                            <img class="img-fluid blur-up lazyload" src="assets/images/others/product-details1.jpg" data-src="assets/images/others/product-details1.jpg" alt="image" title="image" />
+                                            <img class="img-fluid blur-up lazyload" src="{% static 'website/images/others/product-details1.jpg'%}" data-src="{% static 'website/images/others/product-details1.jpg'%}" alt="image" title="image" />
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-6">
-                                            <img class="img-fluid blur-up lazyload" src="assets/images/others/product-details1.jpg" data-src="assets/images/others/product-details1.jpg" alt="image" title="image" />
+                                            <img class="img-fluid blur-up lazyload" src="{% static 'website/images/others/product-details1.jpg'%}" data-src="{% static 'website/images/others/product-details1.jpg'%}" alt="image" title="image" />
                                         </div>
                                     </div>
                                 </div>
@@ -631,7 +631,7 @@
                                         </table>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-6 text-center size-chart-img">
-                                        <img class="img-fluid blur-up lazyload" src="assets/images/others/size-chart.png" data-src="assets/images/others/size-chart.png" alt="image" title="image" />
+                                        <img class="img-fluid blur-up lazyload" src="{% static 'website/images/others/size-chart.png'%}" data-src="{% static 'website/images/others/size-chart.png'%}" alt="image" title="image" />
                                     </div>
                                 </div>
                             </div>
@@ -677,7 +677,8 @@
                             <h2>Related Product</h2>
                             <p>Browse the huge variety of our products</p>
                         </div>
-                        <div class="row row-sp row-eq-height prcarousel">
+                        <div class="row row-sp row-eq-height">
+                            {% for p in products %}
                             <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                                 <div class="product-item">
                                     <div class="product-image-action">
@@ -686,23 +687,45 @@
                                             <span class="label sale">Sale</span>
                                         </div>
                                         <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload primary-img" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover secondary-img" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
+                                            <a href="{% url 'product_details' p.id %}">
+                                                <img class="img-fluid blur-up lazyload primary-img" style="width: 300px; height: 300px;"
+                                                    src="{% get_media_prefix %}{{p.Image}}"
+                                                    data-src="{% get_media_prefix %}{{p.Image}}" alt="image"
+                                                    title="image" />
+                                                <img class="img-fluid blur-up lazyload product-imghover secondary-img" style="width: 300px; height: 300px;"
+                                                    src="{% get_media_prefix %}{{p.Image}}"
+                                                    data-src="{% get_media_prefix %}{{p.Image}}" alt="image"
+                                                    title="image" />
                                             </a>
                                         </div>
+                                        <!-- <div class="product-counter clearfix" data-countdown="2024/10/01"></div> -->
                                         <div class="product-action">
                                             <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
+                                                <li class="actions-addcart" data-toggle="tooltip"
+                                                    data-placement="top" title="add to cart"><a
+                                                        href="#open-addtocart-popup"
+                                                        class="btn open-addtocart-popup"><i
+                                                            class="icon ti-shopping-cart"></i></a></li>
+                                                <li class="actions-quickview" data-toggle="tooltip"
+                                                    data-placement="top" title="quick view"><a
+                                                        href="#open-quickview-popup"
+                                                        class="btn open-quickview-popup"><i
+                                                            class="icon ti-zoom-in"></i></a></li>
+                                                <li class="actions-wishlist" data-toggle="tooltip"
+                                                    data-placement="top" title="add to wishlist"><a
+                                                        href="#open-wishlist-popup"
+                                                        class="btn open-wishlist-popup"><i
+                                                            class="icon ti-heart"></i></a></li>
+                                                <li class="actions-compare" data-toggle="tooltip"
+                                                    data-placement="top" title="add to compare"><a
+                                                        href="compare.html" class="btn"><i
+                                                            class="icon ti-control-shuffle"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Donec pede justo fringilla</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>
+                                        <h3 class="product-title"><a href="{% url 'product_details' p.id %}">{{p.name}}</a></h3>
+                                        <h4 class="product-vendor">{{p.category}}</h4>
                                         <div class="product-starrating">
                                             <i class="spr-icon fa fa-star"></i>
                                             <i class="spr-icon fa fa-star"></i>
@@ -711,416 +734,24 @@
                                             <i class="spr-icon fa fa-star-o"></i>
                                         </div>
                                         <div class="product-price">
-                                            <span class="compare-price">$125.22</span>
-                                            <span class="sale-price">$113.88</span>
+                                            <!-- <span class="compare-price">125.22</span> -->
+                                            <span class="sale-price">{{p.price}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-label">
-                                            <span class="label soldout">-20%</span>
-                                        </div>
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Aenean commodo ligula eget dolor</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="compare-price">$75.20</span>
-                                            <span class="sale-price">$70.15</span>
-                                        </div>                                           
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-label">
-                                            <span class="label soldout">Sold Out</span>
-                                        </div>
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Sociosqu facilisi senectus</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                            
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="sale-price">$133.50</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-label">
-                                            <span class="label hot">Hot</span>
-                                        </div>
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Nullam scelerisque suscipit sociis</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                            
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="compare-price">$145.05</span>
-                                            <span class="sale-price">$135.33</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Consectetur adipisicing elit</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                            
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-half-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="sale-price">$113.88</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {%endfor%} 
                         </div>
                     </div>
                 </div>
                 <!-- End Related Product -->
 
-                <!-- Start Recently Viewed Product -->
-                <div class="recently-viewed-product sections-spacing">
-                    <div class="container">
-                        <div class="section-header">
-                            <h2>Recently Viewed Products</h2>
-                            <p>Browse the huge variety of our products</p>
-                        </div>
-                        <div class="row row-sp row-eq-height prcarousel">
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Pellentesque habitant morbi</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                           
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="sale-price">$113.88</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-label">
-                                            <span class="label soldout">-20%</span>
-                                        </div>
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Neque porro quisquam dolorem</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                           
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-half-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="compare-price">$75.20</span>
-                                            <span class="sale-price">$70.15</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Praesent convallis scelerisque</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                           
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="sale-price">$133.50</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="product-item">
-                                    <div class="product-image-action">
-                                        <div class="product-image">
-                                            <a href="product-details.html">
-                                                <img class="img-fluid blur-up lazyload" src="assets/images/products/product-1.jpg" data-src="assets/images/products/product-1.jpg" alt="image" title="image" />
-                                                <img class="img-fluid blur-up lazyload product-imghover" src="assets/images/products/product-1-1.jpg" data-src="assets/images/products/product-1-1.jpg" alt="image" title="image" />
-                                            </a>
-                                        </div>
-                                        <div class="product-action">
-                                            <ul>
-                                                <li class="actions-addcart" data-toggle="tooltip" data-placement="top" title="add to cart"><a href="#open-addtocart-popup" class="btn open-addtocart-popup"><i class="icon ti-shopping-cart"></i></a></li>
-                                                <li class="actions-quickview" data-toggle="tooltip" data-placement="top" title="quick view"><a href="#open-quickview-popup" class="btn open-quickview-popup"><i class="icon ti-zoom-in"></i></a></li>
-                                                <li class="actions-wishlist" data-toggle="tooltip" data-placement="top" title="add to wishlist"><a href="#open-wishlist-popup" class="btn open-wishlist-popup"><i class="icon ti-heart"></i></a></li>
-                                                <li class="actions-compare" data-toggle="tooltip" data-placement="top" title="add to compare"><a href="compare.html" class="btn"><i class="icon ti-control-shuffle"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-details">
-                                        <h3 class="product-title"><a href="product-details.html">Aliquam faucibus sem nec</a></h3>
-                                        <h4 class="product-vendor">Posh Auto Parts</h4>                                            
-                                        <div class="product-starrating">
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star"></i>
-                                            <i class="spr-icon fa fa-star-half-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                            <i class="spr-icon fa fa-star-o"></i>
-                                        </div>
-                                        <div class="product-price">
-                                            <span class="sale-price">$135.33</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Recently Viewed Product -->
+                
             </main>
             <!-- End Main Content -->
 
             <!-- Start Footer Section -->
-            <footer class="footer">
-                <div class="footer-top clearfix">
-                    <div class="container">
-                        <div class="row no-gutters">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 logo-wellcome">
-                                <div class="ftr-logo">
-                                    <a href="index.html"><img class="img-fluid" src="assets/images/logo/gray-logo.png" alt="Posh Auto Parts" title="Posh Auto Parts" /></a>
-                                </div>
-                                <div class="welcome-text">
-                                    <p class="m-0">Lorem ipsum dolor sit amet,<br> consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
-                                </div>
-                                <div class="social-icons">
-                                    <ul class="d-flex flex-row align-items-center text-center">
-                                        <li><a href="#" title="Facebook"><i class="icon ti-facebook"></i></a></li>
-                                        <li><a href="#" title="Twitter"><i class="icon ti-twitter"></i></a></li>
-                                        <li><a href="#" title="Instagram"><i class="icon ti-instagram"></i></a></li>
-                                        <li><a href="#" title="Google Plus"><i class="icon ti-google"></i></a></li>
-                                        <li><a href="#" title="Youtube"><i class="icon ti-youtube"></i></a></li>
-                                        <li><a href="#" title="Vimeo"><i class="icon ti-vimeo"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-9 newsletter-menulinks">
-                                <div class="row no-gutters footer-newsletter">
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                        <h3>Sign up to our Newsletter and receive 10% off your first order!</h3>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                        <form action="#" class="needs-validation" method="post">
-                                            <div class="form-group m-0 position-relative">
-                                                <input type="text" class="form-control" placeholder="Enter your email address..." required />
-                                                <button class="btn btn-primary" type="submit">
-                                                    <i class="fa fa-paper-plane-o"></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters footer-links">
-                                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                        <h4>Quick Link</h4>
-                                        <ul class="linklist">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="about-us.html">About us</a></li>
-                                            <li><a href="faqs.html">FAQs</a></li>
-                                            <li><a href="contact-us.html">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                        <h4>Help Link</h4>
-                                        <ul class="linklist">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="wishlist.html">My Wishlist</a></li>
-                                            <li><a href="order-tracking.html">Order Traking</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                        <h4>Custom Link</h4>
-                                        <ul class="linklist">
-                                            <li><a href="#">Parts Shop</a></li>
-                                            <li><a href="#">Delivery</a></li>
-                                            <li><a href="#">Refunds</a></li>
-                                            <li><a href="#">Help & support</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact">
-                                        <h4>Contact Information</h4>
-                                        <ul class="linklist contact-info d-flex flex-column">
-                                            <li><i class="icon ti-location-pin"></i><span>No 40 Baria Street 133/2, <br/>NewYork, USA</span></li>
-                                            <li><i class="icon fa fa-phone"></i><a href="tel:+011234567890">(+01) 123 456 7890</a></li>
-                                            <li><i class="icon ti-email"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom clearfix">
-                    <div class="container">
-                        <div class="payment-icons pull-right">
-                            <i class="fa fa-cc-visa" aria-hidden="true"></i> 
-                            <i class="fa fa-cc-amex" aria-hidden="true"></i> 
-                            <i class="fa fa-cc-mastercard" aria-hidden="true"></i> 
-                            <i class="fa fa-cc-discover" aria-hidden="true"></i> 
-                            <i class="fa fa-cc-paypal" aria-hidden="true"></i> 
-                        </div>
-                        <div class="copyright-content pt-md-1 pull-left"> 
-                            <span class="content"> Copyright &copy; 2022 Posh Auto Parts. All Rights Reserved.</span> 
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            {% include 'footer.html'%}
             <!-- End Footer Section -->
 
             <!-- Start Scroll Top -->
@@ -1167,7 +798,7 @@
                             <li class="cart-item d-table">
                                 <div class="pro-img d-table-cell align-middle">
                                     <a href="product-details.html">
-                                        <img class="img-fluid blur-up lazyload" src="assets/images/products/cart-pro-76x76.jpg" data-src="assets/images/products/cart-pro-76x76.jpg" alt="image" title="Donec pede justo fringilla" />
+                                        <img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image" title="Donec pede justo fringilla" />
                                     </a>
                                 </div>
                                 <div class="item-info pl-4 text-left d-table-cell align-top">
@@ -1183,7 +814,7 @@
                             <li class="cart-item d-table">
                                 <div class="pro-img d-table-cell align-middle">
                                     <a href="product-details.html">
-                                        <img class="img-fluid blur-up lazyload" src="assets/images/products/cart-pro-76x76.jpg" data-src="assets/images/products/cart-pro-76x76.jpg" alt="image" title="Sociosqu facilisi senectus nisi etiam" />
+                                        <img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image" title="Sociosqu facilisi senectus nisi etiam" />
                                     </a>
                                 </div>
                                 <div class="item-info pl-4 text-left float-left d-table-cell align-top">
@@ -1199,7 +830,7 @@
                             <li class="cart-item d-table">
                                 <div class="pro-img d-table-cell align-middle">
                                     <a href="product-details.html">
-                                        <img class="img-fluid blur-up lazyload" src="assets/images/products/cart-pro-76x76.jpg" data-src="assets/images/products/cart-pro-76x76.jpg" alt="image" title="Nullam scelerisque suscipit sociis" />
+                                        <img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image" title="Nullam scelerisque suscipit sociis" />
                                     </a>
                                 </div>
                                 <div class="item-info pl-4 text-left d-table-cell align-top">
@@ -1215,7 +846,7 @@
                             <li class="cart-item d-table">
                                 <div class="pro-img d-table-cell align-middle">
                                     <a href="product-details.html">
-                                        <img class="img-fluid blur-up lazyload" src="assets/images/products/cart-pro-76x76.jpg" data-src="assets/images/products/cart-pro-76x76.jpg" alt="image" title="Pellentesque habitant morbi" />
+                                        <img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image" title="Pellentesque habitant morbi" />
                                     </a>
                                 </div>
                                 <div class="item-info pl-4 text-left d-table-cell align-top">
@@ -1252,7 +883,7 @@
                         </div>
                         <div class="actions d-inline-block w-100 text-center">
                             <a class="btn btn-primary d-block mb-4 font-sm-14" href="{% url 'cart'%}">View Cart</a>
-                            <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">Proceed to checkout</a>
+                            <a class="btn btn-secondary d-block font-sm-14" href="{% url 'checkout'%}">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
@@ -1263,7 +894,7 @@
             <div id="open-addtocart-popup" class="addtocart-popup magnific-popup mfp-hide">
                 <div class="addtocart-inner-content text-center">
                     <h4>Added to Cart Successfully</h4>
-                    <p class="pro-img"><img class="img-fluid blur-up lazyload" src="assets/images/products/addtocart-popup.jpg" data-src="assets/images/products/addtocart-popup.jpg" alt="image" title="image" /></p>
+                    <p class="pro-img"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/addtocart-popup.jpg'%}" data-src="{% static 'website/images/products/addtocart-popup.jpg'%}" alt="image" title="image" /></p>
                     <p class="modal-prod-name mb-1 font-15">Carb Fits Cigarette tiyer</p>
                     <p class="mb-1 font-13">Color: Black</p>
                     <p class="font-13">Quantity: 1</p>
@@ -1287,18 +918,18 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-6">
                             <div class="product-single-photo slider thumbnails-single">
-                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1.jpg" data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" /></div>
-                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1.jpg" data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" /></div>
-                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1.jpg" data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" /></div>
-                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1.jpg" data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" /></div>
-                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1.jpg" data-src="assets/images/products/quick-view-1.jpg" alt="image" title="image" /></div>
+                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1.jpg'%}" data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" /></div>
+                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1.jpg'%}" data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" /></div>
+                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1.jpg'%}" data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" /></div>
+                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1.jpg'%}" data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" /></div>
+                                <div class="single-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1.jpg'%}" data-src="{% static 'website/images/products/quick-view-1.jpg'%}" alt="image" title="image" /></div>
                             </div>
                             <div class="product-thumb slider thumbnail-items">
-                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1-item.jpg" data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" /></div>
-                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1-item.jpg" data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" /></div>
-                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1-item.jpg" data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" /></div>
-                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1-item.jpg" data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" /></div>
-                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="assets/images/products/quick-view-1-item.jpg" data-src="assets/images/products/quick-view-1-item.jpg" alt="image" title="image" /></div>
+                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1-item.jpg'%}" data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" /></div>
+                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1-item.jpg'%}" data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" /></div>
+                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1-item.jpg'%}" data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" /></div>
+                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1-item.jpg'%}" data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" /></div>
+                                <div class="thumb-item"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/quick-view-1-item.jpg'%}" data-src="{% static 'website/images/products/quick-view-1-item.jpg'%}" alt="image" title="image" /></div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6">
@@ -1390,7 +1021,7 @@
             <div id="open-wishlist-popup" class="wishlist-popup magnific-popup mfp-hide">
                 <div class="wishlist-inner-content text-center">
                     <h4>Successfully added in wishlist</h4>
-                    <p class="pro-img"><img class="img-fluid blur-up lazyload" src="assets/images/products/addwishlist-popup.jpg" data-src="assets/images/products/addwishlist-popup.jpg" alt="image" title="image" /></p>
+                    <p class="pro-img"><img class="img-fluid blur-up lazyload" src="{% static 'website/images/products/addwishlist-popup.jpg'%}" data-src="{% static 'website/images/products/addwishlist-popup.jpg'%}" alt="image" title="image" /></p>
                     <p class="modal-prod-name mb-4 font-15">Carb Fits Cigarette tiyer</p>
                     <div class="button-action">
                         <button class="btn btn-secondary btn-block mb-3 continue-shopping close-popup">Continue Shopping</button>
@@ -1407,7 +1038,7 @@
                         <button type="button" class="sticky-product-close close ti-close" data-dismiss="alert" aria-label="Close"></button>
                         <div class="sticky-product-imfo">
                             <div class="sticky-image">
-                                <img class="product-image" src="assets/images/products/sticky-pro-img.jpg" alt="image" title="image" />
+                                <img class="product-image" src="{% static 'website/images/products/sticky-pro-img.jpg'%}" alt="image" title="image" />
                                 <div class="product-label"><span class="label soldout">-20%</span></div>
                             </div>
                             <div class="sticky-details">

@@ -85,8 +85,14 @@ def checkout_success(request):
 def collections(request):
     return render(request, 'collections.html')
 
-def product_details(request):
-    return render(request, 'product-details.html')
+def product_details(request,product_id):
+    sp = Product.objects.get(id=product_id)
+    # get all product except current product
+    product = Product.objects.all().exclude(id=product_id).order_by('-id')
+    return render(request, 'product-details.html',{
+        'products':product,
+        'sp':sp
+        })
 
 
 def logout_user(request):

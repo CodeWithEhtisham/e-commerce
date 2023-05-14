@@ -75,7 +75,7 @@
                                                 <span class="label sale">Sale</span>
                                             </div>
                                             <div class="product-image">
-                                                <a href="{% url 'product_details'%}">
+                                                <a href="{% url 'product_details' p.id %}">
                                                     <img class="img-fluid blur-up lazyload primary-img" style="width: 300px; height: 300px;"
                                                         src="media/{{p.Image}}"
                                                         data-src="media/{{p.Image}}" alt="image"
@@ -112,7 +112,7 @@
                                             </div>
                                         </div>
                                         <div class="product-details">
-                                            <h3 class="product-title"><a href="{% url 'product_details'%}">{{p.name}}</a></h3>
+                                            <h3 class="product-title"><a href="{% url 'product_details' p.id %}">{{p.name}}</a></h3>
                                             <h4 class="product-vendor">{{p.category}}</h4>
                                             <div class="product-starrating">
                                                 <i class="spr-icon fa fa-star"></i>

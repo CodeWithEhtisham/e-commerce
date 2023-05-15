@@ -162,9 +162,11 @@ def checkout_success(request):
                 total=item['total_price'],
                 order_number=random.randint(100000, 999999)
             )
+            
+        dummy = cart.copy()
         cart.clear()
-
-        return HttpResponseRedirect(reverse("checkout_success"))
+        sub_total = sum([float(item['total_price']) for item in dummy.values()])
+        return render(request, 'checkout-success.html', {'carts': dummy.values(), 'sub_total': sub_total})
     else:
         return render(request, 'checkout-success.html')
 

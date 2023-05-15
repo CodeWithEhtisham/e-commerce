@@ -229,24 +229,34 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {% for o in orders %}
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>2012/08/03</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>New York</td>
-                                                    <td>New York</td>
-                                                    <td>10</td>
-                                                    <td>Kurta</td>
-                                                    <td>10</td>
-                                                    <td>$1500</td>
-                                                    <td>$3200</td>
+                                                    <td>{{o.order_number}}</td>
+                                                    <td>{{o.created_at}}</td>
+                                                    <td>{{o.customer.first_name}}</td>
+                                                    <td>{{o.customer.address}}</td>
+                                                    <td>{{o.customer.city}}</td>
+                                                    <td>{{o.customer.contact}}</td>
+                                                    <td>{{o.product.name}}</td>
+                                                    <td>{{o.quantity}}</td>
+                                                    <td>{{o.product.price}}</td>
+                                                    <td>{{o.total}}</td>
                                                     <td>
-                                                        <label class="badge badge-outline-info">Hold</label>
+                                                        <label class="badge badge-outline-info">{{o.status}}</label>
                                                     </td>
+                                                    {% if o.status == 'pending' %}
                                                     <td>
-                                                        <button class="badge badge-primary">Delivered</button>
+                                                        <button class="badge badge-outline-success">Confirm</button>
+                                                        <button class="badge badge-outline-danger">Cancel</button>
                                                     </td>
+                                                    {% endif %}
+                                                    {% if o.status == 'delivered' %}
+                                                    <td>
+                                                        <button class="badge badge-outline-primary">Delivered</button>
+                                                    </td>
+                                                    {% endif %}
                                                 </tr>
+                                                {% endfor %}
                                 
                                             </tbody>
                                         </table>

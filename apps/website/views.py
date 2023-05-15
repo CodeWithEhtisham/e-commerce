@@ -56,10 +56,10 @@ def index(request):
     if request.method=="POST":
         pass
     products = Product.objects.all().order_by('-id')[:4]
-    for i in products:
-        print(i.name)
+    total_cart = len(get_cart(request))
     return render(request, 'index.html',{
-        'products':products
+        'products':products,
+        "cart_length": total_cart
         })
 
 
@@ -162,7 +162,7 @@ def checkout_success(request):
                 total=item['total_price'],
                 order_number=random.randint(100000, 999999)
             )
-            
+
         dummy = cart.copy()
         cart.clear()
         sub_total = sum([float(item['total_price']) for item in dummy.values()])

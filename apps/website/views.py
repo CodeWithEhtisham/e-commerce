@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import CustomUser, AddToCart
+from .models import CustomUser, Customer
 from django.contrib.auth import logout, login, authenticate
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -8,23 +8,48 @@ from apps.adminpanel.models import Product
 from django.shortcuts import get_object_or_404, redirect
 # from .models import Product
 from django.conf import settings
+import random
 # from  import get_cart, CART_SESSION_KEY
 
+def clear_session(request):
+    request.session.flush()
+
 def get_cart(request):
-    cart = request.session.get(settings.CART_SESSION_KEY, [])
+    cart = request.session.get(settings.CART_SESSION_KEY, {})
     request.session[settings.CART_SESSION_KEY] = cart
     return cart
+
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     cart = get_cart(request)
+    # clear_session(request)
 
-    # Add the product to the session cart
-    cart.append(product.id)
+    # Convert product_id to string for consistency
+    product_id_str = str(product_id)
+
+    # Check if the product is already in the cart
+    if product_id_str in cart:
+        cart[product_id_str]['quantity'] += 1
+        cart[product_id_str]['total_price'] = str(
+            int(cart[product_id_str]['quantity']) * product.price)
+    else:
+        cart[product_id_str] = {
+            'id': product_id_str,
+            'name': product.name,
+            'Image': product.Image.url,
+            'price': str(product.price),
+            'quantity': 1,
+            'total_price': str(product.price)
+        }
 
     cart = get_cart(request)
-    products = Product.objects.filter(id__in=cart)
+    # print(cart)
+    sub_total = sum([float(item['total_price']) for item in cart.values()])
 
-    return render(request, 'cart.html', {'carts': products})
+    return render(request, 'cart.html', {'carts': cart.values(), 'sub_total': sub_total})
+
+
+
 
 # Create your views here.
 def index(request):
@@ -97,38 +122,53 @@ def shop_grid_fullwidth(request):
         'products':products
     })
 
-from django.db.models import Sum
-def carts(request):
-    # if product_id:
-    #     product = Product.objects.get(id=product_id)
-    #     if AddToCart.objects.filter(product=product, user=request.user).exists():
-    #         cart = AddToCart.objects.get(product=product, user=request.user)
-    #         cart.quantity = cart.quantity + 1
-    #         cart.total_price = cart.quantity * product.price
-    #         cart.save()
-    #     else:
-    #         cart = AddToCart.objects.create(product=product, user=request.user)
-    #         cart.quantity = 1
-    #         cart.total_price = product.price
-    #         cart.save()
-    # carts = AddToCart.objects.filter(user=request.user).select_related('product').order_by('-id')
-    # sub_total = carts.aggregate(Sum('total_price'))['total_price__sum']
-    # return render(request, 'cart.html',{    
-    #     'carts':carts,
-    #     'sub_total':sub_total
-    #     })
-
-    cart = get_cart(request)
-    products = Product.objects.filter(id__in=cart)
-
-    return render(request, 'cart.html', {'products': products})
 
 
 def checkout(request):
-    return render(request, 'checkout.html')
+    cart = get_cart(request)
+    sub_total = sum([float(item['total_price']) for item in cart.values()])
+    return render(request, 'checkout.html', {'carts': cart.values(), 'sub_total': sub_total})
+from apps.adminpanel.models import Order
+from django.shortcuts import get_object_or_404
+
+from django.shortcuts import get_object_or_404
 
 def checkout_success(request):
-    return render(request, 'checkout-success.html')
+    if request.method == "POST":
+        email = request.POST['email-address']
+        customer, created = Customer.objects.get_or_create(email=email)
+
+        if created:
+            first_name = request.POST['first-name']
+            last_name = request.POST['last-name']
+            contact = request.POST['phone-number']
+            address = request.POST['address']
+            city = request.POST['city']
+            zip_code = request.POST['zip-code']
+            customer.first_name = first_name
+            customer.last_name = last_name
+            customer.contact = contact
+            customer.address = address
+            customer.city = city
+            customer.zip_code = zip_code
+            customer.save()
+
+        cart = get_cart(request)
+        for item in cart.values():
+            Order.objects.create(
+                customer=customer,
+                product=Product.objects.get(id=item['id']),
+                quantity=item['quantity'],
+                total=item['total_price'],
+                order_number=random.randint(100000, 999999)
+            )
+        cart.clear()
+
+        return HttpResponseRedirect(reverse("checkout_success"))
+    else:
+        return render(request, 'checkout-success.html')
+
+
 
 def collections(request):
     return render(request, 'collections.html')
@@ -146,3 +186,63 @@ def product_details(request,product_id):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
+
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
+@api_view(['GET'])
+def increament_quantity(request):
+    try:
+        # get product id form json
+        print('request increament api',request.GET)
+        product_id = request.GET.get('product_id')
+        print(product_id)
+
+        cart=get_cart(request)
+        # clear_session(request)
+        cart[str(product_id)]['quantity'] += 1
+        cart[str(product_id)]['total_price'] = str(
+            int(cart[str(product_id)]['quantity']) * float(cart[str(product_id)]['price']))
+        sub_total = sum([float(cart[i]['total_price']) for i in cart])
+        return JsonResponse({
+            'success': True,
+            'quantity': cart[str(product_id)]['quantity'],
+            'total_price': cart[str(product_id)]['total_price'],
+            'sub_total': sub_total,
+        })
+    except Exception as e:
+        print(e)
+        return JsonResponse({'error': f'Something went wrong {e}'})
+@api_view(['GET'])
+def decreament_quantity(request):
+    try:
+        # get product id form json
+        print('request decreament api',request.GET)
+        product_id = request.GET.get('product_id')
+        print(product_id)
+
+        cart=get_cart(request)
+        # clear_session(request)
+        if cart[str(product_id)]['quantity'] > 1:
+            cart[str(product_id)]['quantity'] -= 1
+            cart[str(product_id)]['total_price'] = str(
+                int(cart[str(product_id)]['quantity']) * float(cart[str(product_id)]['price']))
+            sub_total = sum([float(cart[i]['total_price']) for i in cart])
+            return JsonResponse({
+                'success': True,
+                'quantity': cart[str(product_id)]['quantity'],
+                'total_price': cart[str(product_id)]['total_price'],
+                'sub_total': sub_total,
+            })
+        else:
+            # delete product from cart
+            del cart[str(product_id)]
+            sub_total = sum([float(cart[i]['total_price']) for i in cart])
+            return JsonResponse({
+                'success': True,
+                'quantity': 0,
+                'total_price': 0,
+                'sub_total': sub_total,
+            })
+    except Exception as e:
+        print(e)
+        return JsonResponse({'error': f'Something went wrong {e}'})

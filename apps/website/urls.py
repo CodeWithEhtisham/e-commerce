@@ -15,6 +15,10 @@ urlpatterns = [
     path('collections', views.collections, name='collections'),
     path('product_details/<int:product_id>/', views.product_details, name='product_details'),
     path('logout', views.logout_user, name='logout'),
+
+    path('api/increament_quantity/', views.increament_quantity, name='increament_quantity'),
+    path('api/decreament_quantity/', views.decreament_quantity, name='decreament_quantity'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # # Serving the media files in development mode
 # if settings.DEBUG:

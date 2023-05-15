@@ -52,43 +52,45 @@
                                     </thead>
                                     <tbody>
                                         {% for c in carts %}
-                                        {{c}}
-                                        <tr>
+                                        <tr id="row_{{ c.id }}">
                                             <td class="pro-img text-center"><a href="#"><img
-                                                        class="img-fluid blur-up lazyload"
-                                                        src="{% get_media_prefix %}{{c.Image}}"
-                                                        data-src="{% get_media_prefix %}{{c.Image}}"
-                                                        alt="image" title="image" width="100" /></a></td>
+                                                        class="img-fluid blur-up lazyload" src="{{ c.Image }}"
+                                                        data-src="{{ c.Image }}" alt="image" title="image"
+                                                        width="100" /></a></td>
                                             <td class="pro-del text-center text-sm-left">
-                                                <p class="mb-1 pro-name"><a>{{c.name}}</a></p>
+                                                <p class="mb-1 pro-name"><a>{{ c.name }}</a></p>
                                                 <p class="mb-1">Size: Small</p>
                                                 <p class="mb-1">Color: Black</p>
                                             </td>
-                                            <td class="pro-price text-center">{{c.price}}</td>
+                                            <td class="pro-price text-center">{{ c.price }}</td>
                                             <td class="pro-qty text-center">
                                                 <div class="qty-box">
-                                                    <button type="button" class="qtyminus button" value=""><i
+                                                    <button type="button" class="qtyminus button" value=""
+                                                        onclick="decrement_quantity({{ c.id }})"><i
                                                             class="fa fa-minus"></i></button>
-                                                    <input type="text" name='quantity' value='{{c.quantity}}' class="qty-input" />
-                                                    <button type="button" class="qtyplus button" value=""><i
+                                                    <input type="text" name="quantity" id="quantity"
+                                                        value="{{ c.quantity }}" class="qty-input" />
+                                                    <button type="button" class="qtyplus button" value=""
+                                                        onclick="increment_quantity({{ c.id }})"><i
                                                             class="fa fa-plus"></i></button>
                                                 </div>
                                                 <a class="qty-remove ml-3" href="#"><i class="ti-close"></i></a>
                                             </td>
-                                            <td class="pro-total text-center">{{c.total_price}}</td>
+                                            <td class="pro-total text-center">{{ c.total_price }}</td>
                                         </tr>
                                         {% endfor %}
+
                                     </tbody>
                                 </table>
                             </div>
                             <!-- End Cart Table -->
                             <!-- Start Cart Action Button -->
                             <div class="cart-table-action clearfix">
-                                <a href="#" class="btn btn-secondary pull-left">Update Cart</a>
+                                <a href="{% url 'index'%}" class="btn btn-secondary pull-left">Update Cart</a>
                                 <a href="{% url 'index' %}" class="btn btn-secondary pull-right">Continue Shopping</a>
                             </div>
                             <!-- End Cart Action Button -->
-                            
+
                         </div>
                         <!-- End Cart Details -->
 
@@ -111,12 +113,13 @@
                                 <!-- Start Cart Sub Total -->
                                 <div class="cart-subtotal clearfix">
                                     <p class="subtle-title m-0 pull-left text-uppercase">Subtotal</p>
-                                    <p class="sabtotal m-0 pull-right">{{sub_total}}</p>
+                                    <p class="sabtotal m-0 pull-right" id="sub_total">{{sub_total}}</p>
                                 </div>
                                 <!-- End Cart Sub Total -->
                                 <!-- Start Cart Checkout Button -->
                                 <div class="cart-checkout">
-                                    <a class="btn btn-primary btn-block font-sm-14" href="checkout.html">Proceed to checkout</a>
+                                    <a class="btn btn-primary btn-block font-sm-14" href="{% url 'checkout'%}">Proceed to
+                                        checkout</a>
                                     <!-- <button type="submit" class="btn btn-primary btn-block">Proceed to checkout</button> -->
                                 </div>
                                 <!-- End Cart Checkout Button -->
@@ -131,8 +134,9 @@
                                         src="{% static 'website/images/others/safe-checkout.png' %}" alt="image"
                                         title="Granted safe checkout" />
                                 </div>
-                                <img class="img-fluid blur-up lazyload" src="{% static 'website/images/icons/checkout-card.png' %}"
-                                    alt="image" title="Checkout Card" />
+                                <img class="img-fluid blur-up lazyload"
+                                    src="{% static 'website/images/icons/checkout-card.png' %}" alt="image"
+                                    title="Checkout Card" />
                             </div>
                             <!-- End Checkout Card -->
                         </div>
@@ -305,14 +309,66 @@
 
     {% include 'script.html'%}
     <script>
-        $(document).ready(function () {
-            $('.cart').on('click', function () {
-                $('.shopping-cart-content').addClass('cart-open');
+        function increment_quantity(val) {
+            // ajax call
+            $.ajax({
+                url: '/api/increament_quantity/',
+                data: {
+                    'product_id': val,
+                },
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+            if (data.success) {
+                // Retrieve the current row
+                var row = $('#row_' + val);
+                console.log(data);
+                // Update the quantity value in the input field
+                var quantityInput = row.find('.qty-input');
+                quantityInput.val(data.quantity);
+
+                // Update the total price in the table cell
+                var totalCell = row.find('.pro-total');
+                totalCell.text(data.total_price);
+                $('#sub_total').text(data.sub_total);
+            }
+        },
+                error: function (error) {
+                    console.log('Error in Operation');
+                }
             });
-            $('.close-shopping-cart').on('click', function () {
-                $('.shopping-cart-content').removeClass('cart-open');
+        }
+
+        function decrement_quantity(val) {
+            // ajax call
+            $.ajax({
+                url: '/api/decreament_quantity/',
+                data: {
+                    'product_id': val,
+                },
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+            if (data.success) {
+                // Retrieve the current row
+                var row = $('#row_' + val);
+                console.log(data);
+                // Update the quantity value in the input field
+                var quantityInput = row.find('.qty-input');
+                quantityInput.val(data.quantity);
+
+                // Update the total price in the table cell
+                var totalCell = row.find('.pro-total');
+                totalCell.text(data.total_price);
+                $('#sub_total').text(data.sub_total);
+            }
+        },
+                error: function (error) {
+                    console.log('Error in Operation');
+                }
             });
-        });
+        }
+
     </script>
 </body>
-    {% endblock%}
+{% endblock%}

@@ -179,69 +179,7 @@
         <!-- End Scroll Top -->
 
         <!-- Start Cart Drawer -->
-        <div class="minicart-wrapper">
-            <div class="cart-drawer model fade right show cart-drawer-right">
-                <div class="minicart-head">
-                    <h3>Shopping Cart</h3>
-                    <a class="close-btn active">
-                        <i class="ti-close"></i>
-                    </a>
-                </div>
-                <div class="minicart-details">
-                    <div class="empty-cart">
-                        <p>You have no items in your shopping cart.</p>
-                    </div>
-                    <ul class="cart-lists clearfix">
-                        <!-- List of Products added to CART -->
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
-                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
-                                        title="Donec pede justo fringilla" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left d-table-cell align-top">
-                                <a href="product-details.html">Donec pede justo fringilla</a>
-                                <p class="size-color">Sliver Black/XXL</p>
-                                <p class="price">1 x 699.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="minicart-bottom-actions">
-                    <div class="pro-totals d-inline-block w-100">
-                        <div class="items mb-1 clearfix">
-                            <span class="item subtotal float-left">Subtotal:</span>
-                            <span class="price-total float-right"><span class="price">1356.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item shipping float-left">Shipping:</span>
-                            <span class="price-total float-right"><span class="price">10.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item tax float-left">Tax:</span>
-                            <span class="price-total float-right"><span class="price">0.00</span></span>
-                        </div>
-                        <div class="items clearfix">
-                            <span class="item total float-left">Total:</span>
-                            <span class="price-total float-right"><span class="price">1366.00</span></span>
-                        </div>
-                    </div>
-                    <div class="actions d-inline-block w-100 text-center">
-                        <a class="btn btn-primary d-block mb-4 font-sm-14" href="cart.html">View Cart</a>
-                        <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">Proceed to checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include 'cart_drawar.html'%}
         <!-- End Cart Drawer -->
 
         <!-- Overlay -->

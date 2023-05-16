@@ -10,6 +10,7 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('shop_grid_fullwidth', views.shop_grid_fullwidth, name='shop_grid_fullwidth'),
     path('cart/<int:product_id>/', views.add_to_cart, name='cart'),
+    path('cart', views.add_to_cart, name='cart'),
     path('checkout', views.checkout, name='checkout'),
     path('checkout_success', views.checkout_success, name='checkout_success'),
     path('collections', views.collections, name='collections'),

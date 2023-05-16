@@ -19,7 +19,13 @@ def get_cart(request):
     request.session[settings.CART_SESSION_KEY] = cart
     return cart
 
-def add_to_cart(request, product_id):
+def add_to_cart(request, product_id=None):
+    if product_id is None:
+        cart = get_cart(request)
+        # print(cart)
+        sub_total = sum([float(item['total_price']) for item in cart.values()])
+
+        return render(request, 'cart.html', {'carts': cart.values(), 'sub_total': sub_total})
     product = get_object_or_404(Product, id=product_id)
     cart = get_cart(request)
     # clear_session(request)
@@ -56,10 +62,11 @@ def index(request):
     if request.method=="POST":
         pass
     products = Product.objects.all().order_by('-id')[:4]
-    total_cart = len(get_cart(request))
     return render(request, 'index.html',{
         'products':products,
-        "cart_length": total_cart
+        "cart_length": len(get_cart(request)),
+        'carts': get_cart(request).values(),
+        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
         })
 
 
@@ -119,7 +126,10 @@ def register(request):
 def shop_grid_fullwidth(request):
     products=Product.objects.all().order_by('-id')
     return render(request, 'shop-grid-fullwidth.html',{
-        'products':products
+        'products':products,
+        "cart_length": len(get_cart(request)),
+        'carts': get_cart(request).values(),
+        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
     })
 
 
@@ -127,7 +137,12 @@ def shop_grid_fullwidth(request):
 def checkout(request):
     cart = get_cart(request)
     sub_total = sum([float(item['total_price']) for item in cart.values()])
-    return render(request, 'checkout.html', {'carts': cart.values(), 'sub_total': sub_total})
+    return render(request, 'checkout.html',
+                   {
+                       "cart_length": len(get_cart(request)),
+                        'carts': get_cart(request).values(),
+                        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
+                    })
 from apps.adminpanel.models import Order
 from django.shortcuts import get_object_or_404
 
@@ -166,7 +181,8 @@ def checkout_success(request):
         dummy = cart.copy()
         cart.clear()
         sub_total = sum([float(item['total_price']) for item in dummy.values()])
-        return render(request, 'checkout-success.html', {'carts': dummy.values(), 'sub_total': sub_total})
+        return render(request, 'checkout-success.html', 
+                      {'carts': dummy.values(), 'sub_total': sub_total})
     else:
         return render(request, 'checkout-success.html')
 
@@ -181,7 +197,10 @@ def product_details(request,product_id):
     product = Product.objects.all().exclude(id=product_id).order_by('-id')
     return render(request, 'product-details.html',{
         'products':product,
-        'sp':sp
+        'sp':sp,
+        "cart_length": len(get_cart(request)),
+        'carts': get_cart(request).values(),
+        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
         })
 
 

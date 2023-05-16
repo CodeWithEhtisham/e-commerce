@@ -49,7 +49,7 @@
                             class="menu-close mr-2">Close</span><i class="ti-close" aria-hidden="true"></i></a>
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">HOME</a>
+                            <a class="nav-link" href="{% url 'index'%}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Feature
@@ -304,7 +304,7 @@
                     <a href="#" class="cart-btn" title="Cart" data-toggle="modal" data-target="#mycartdrawer">
                         <i class="icon ti-shopping-cart"></i>
                         <div class="cart-count">
-                            <span id="count">4</span>
+                            <span id="count">{{cart_length}}</span>
                         </div>
                     </a>
                 </div>

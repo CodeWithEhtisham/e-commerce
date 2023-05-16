@@ -1,17 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+# from apps.adminpanel.models import Product
 class CustomUser(AbstractUser):
     contact = models.CharField(max_length=10, null=True, blank=True)
     address = models.CharField(max_length=100, null=True, blank=True)
     
 
-class AddToCart(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    product = models.ForeignKey('adminpanel.Product', on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)
-    total_price = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return str(self.user)
+class Customer(models.Model):
+    first_name = models.CharField(max_length=100, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField(max_length=100, null=True, blank=True)
+    contact = models.CharField(max_length=10, null=True, blank=True)
+    address = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True)
+    zip_code = models.CharField(max_length=10, null=True, blank=True)
+
+

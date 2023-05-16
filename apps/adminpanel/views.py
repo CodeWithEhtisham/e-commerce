@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.contrib.auth.decorators import login_required
-from .models import Product
+from .models import Product, Order
 import os
 from apps.website.models import CustomUser
 # @login_required
@@ -15,7 +15,12 @@ def admin_index(request):
 
 
 def orders(request):
-    return render(request, 'orders.html')
+    if request.user.is_superuser:
+        orders = Order.objects.all()
+        return render(request, 'orders.html', {'orders': orders})
+    else:
+        orders = Order.objects.filter(product__user=request.user)
+        return render(request, 'orders.html', {'orders': orders})
 
 def add_product(request):
     if request.method == 'POST':

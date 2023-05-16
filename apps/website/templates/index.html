@@ -17,7 +17,7 @@
                 <!-- Start Slidershow Banner -->
                 <div class="slideshow slideshow-banner">
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
+                    style="background-image: url({% static 'website/images/image-2.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Buy With Confidence Our Traditional</h3>
                             <p>High Quality Stuffs</p>
@@ -25,15 +25,15 @@
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
+                    style="background-image: url({% static 'website/images/image-1.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Perfect choice for Mens and Womens</h3>
-                            <p>High Quality Stuffs/p>
+                            <p>High Quality Stuffs</p>
                                 <a href="shop-grid-fullwidth.html" class="btn btn-primary">Buy now!</a>
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
-                    style="background-image: url({% static 'website/images/slider/banner-v2-1.jpg' %});">
+                    style="background-image: url({% static 'website/images/image-4.jpg' %});">
                         <div class="container slideshow-details">
                             <h3>Perfect and Handy made</h3>
                             <p>High Quality Stuffs</p>
@@ -56,8 +56,8 @@
                         </div>
                         <ul class="drawer-tabs tabs">
                             <li class="item active" data-tab="tab1"><a>New</a></li>
-                            <li class="item" data-tab="tab2"><a>Featured</a></li>
-                            <li class="item" data-tab="tab3"><a>Bestseller</a></li>
+                            <!-- <li class="item" data-tab="tab2"><a>Featured</a></li>
+                            <li class="item" data-tab="tab3"><a>Bestseller</a></li> -->
                         </ul>
                     </div>
                     <!-- Start Tab Container -->
@@ -91,8 +91,8 @@
                                                 <ul>
                                                     <li class="actions-addcart" data-toggle="tooltip"
                                                         data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
+                                                            href="{% url 'cart' p.id %}"
+                                                            class="btn"><i
                                                                 class="icon ti-shopping-cart"></i></a></li>
                                                     <li class="actions-quickview" data-toggle="tooltip"
                                                         data-placement="top" title="quick view"><a
@@ -128,185 +128,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label soldout">-20%</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Aenean commodo
-                                                    ligula</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="compare-price">75.20</span>
-                                                <span class="sale-price">70.15</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label soldout">Sold Out</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Sociosqu facilisi
-                                                    senectus</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">133.50</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label hot">Hot</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Nullam sceleri
-                                                    sociis</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="compare-price">145.05</span>
-                                                <span class="sale-price">135.33</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                
                                 {%endfor%} 
                             </div>
                             <!-- Start Load More Button -->
@@ -316,490 +138,7 @@
                             <!-- End Load More Button -->
                         </div>
                         <!-- End Tab1 -->
-                        <!-- Tab2 -->
-                        <h3 class="tab-drawer-heading" data-tab="tab2"><a>Engine</a></h3>
-                        <div id="tab2" class="drawertab-content">
-                            <div class="row row-sp row-eq-height">
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Pellentesque
-                                                    habitant morbi</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">113.88</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label soldout">-20%</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Neque porro
-                                                    dolorem</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-half-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="compare-price">75.20</span>
-                                                <span class="sale-price">70.15</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Praesent convallis
-                                                    scelerisque</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">133.50</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Aliquam faucibus
-                                                    sem nec</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-half-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">135.33</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Start Load More Button -->
-                            <div class="product-readmore text-center">
-                                <a href="shop-grid-fullwidth.html" class="btn btn-secondary">Load More</a>
-                            </div>
-                            <!-- End Load More Button -->
-                        </div>
-                        <!-- End Tab2 -->
-                        <!-- Start Tab3 -->
-                        <h3 class="tab-drawer-heading" data-tab="tab3"><a>Suspension</a></h3>
-                        <div id="tab3" class="drawertab-content">
-                            <div class="row row-sp row-eq-height">
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label new">New</span>
-                                                <span class="label sale">Sale</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Stockvault oil
-                                                    plastic</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="compare-price">125.22</span>
-                                                <span class="sale-price">113.88</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Aliquam tincidunt
-                                                    mauris</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">70.15</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-label">
-                                                <span class="label soldout">Sold Out</span>
-                                            </div>
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Lorem ipsum dolor
-                                                    sit amet</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">133.50</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                    <div class="product-item">
-                                        <div class="product-image-action">
-                                            <div class="product-image">
-                                                <a href="product-details.html">
-                                                    <img class="img-fluid blur-up lazyload"
-                                                        src="{% static 'website/images/products/product-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                    <img class="img-fluid blur-up lazyload product-imghover"
-                                                        src="{% static 'website/images/products/product-1-1.jpg'%}"
-                                                        data-src="{% static 'website/images/products/product-1-1.jpg'%}" alt="image"
-                                                        title="image" />
-                                                </a>
-                                            </div>
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li class="actions-addcart" data-toggle="tooltip"
-                                                        data-placement="top" title="add to cart"><a
-                                                            href="#open-addtocart-popup"
-                                                            class="btn open-addtocart-popup"><i
-                                                                class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details">
-                                            <h3 class="product-title"><a href="product-details.html">Ut imperdiet enim
-                                                    feugiat</a></h3>
-                                            <h4 class="product-vendor">Traditional Stuff</h4>
-                                            <div class="product-starrating">
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                                <i class="spr-icon fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sale-price">135.33</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Start Load More Button -->
-                            <div class="product-readmore text-center">
-                                <a href="shop-grid-fullwidth.html" class="btn btn-secondary">Load More</a>
-                            </div>
-                            <!-- End Load More Button -->
-                        </div>
-                        <!-- End Tab3 -->
+                        
                     </div>
                     <!-- End Tab Container -->
                 </div>
@@ -815,8 +154,8 @@
                                 <div class="item-img">
                                     <a href="#" class="animate-scale zoom-hover-effect"><img
                                             class="img-fluid blur-up lazyload w-100"
-                                            src="{% static 'website/images/collection/classic-image-1.jpg'%}"
-                                            data-src="{% static 'website/images/collection/classic-image-1.jpg'%}" alt="image"
+                                            src="{% static 'website/images/image-4.jpg'%}"
+                                            data-src="{% static 'website/images/image-4.jpg'%}" alt="image"
                                             title="image" /></a>
                                 </div>
                                 <div class="item-content text-center">
@@ -836,8 +175,8 @@
                                 <div class="item-img">
                                     <a href="#" class="animate-scale zoom-hover-effect"><img
                                             class="img-fluid blur-up lazyload w-100"
-                                            src="{% static 'website/images/collection/classic-image-1.jpg'%}"
-                                            data-src="{% static 'website/images/collection/classic-image-1.jpg'%}" alt="image"
+                                            src="{% static 'website/images/image-6.jpg'%}"
+                                            data-src="{% static 'website/images/image-6.jpg'%}" alt="image"
                                             title="image" /></a>
                                 </div>
                             </div>
@@ -904,8 +243,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
-                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
+                                        src="{% static 'website/images/image-5.jpg'%}"
+                                        data-src="{% static 'website/images/image-5.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -922,8 +261,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
-                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
+                                        src="{% static 'website/images/image-8.jpg'%}"
+                                        data-src="{% static 'website/images/image-8.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -940,8 +279,8 @@
                             <div class="collection-item">
                                 <a class="collection-img animate-scale zoom-hover-effect mb-3">
                                     <img class="img-fluid blur-up w-100 lazyload"
-                                        src="{% static 'website/images/collection/collection-small1.jpg'%}"
-                                        data-src="{% static 'website/images/collection/collection-small1.jpg'%}" alt="image"
+                                        src="{% static 'website/images/image-9.jpg'%}"
+                                        data-src="{% static 'website/images/image-9.jpg'%}" alt="image"
                                         title="image" />
                                 </a>
                                 <div class="collection-details">
@@ -1394,128 +733,11 @@
         <!-- End Search Drawer -->
 
         <!-- Start Cart Drawer -->
-        <div class="minicart-wrapper">
-            <div class="cart-drawer model fade right show cart-drawer-right">
-                <div class="minicart-head">
-                    <h3>Shopping Cart</h3>
-                    <a class="close-btn active">
-                        <i class="ti-close"></i>
-                    </a>
-                </div>
-                <div class="minicart-details">
-                    <div class="empty-cart">
-                        <p>You have no items in your shopping cart.</p>
-                    </div>
-                    <ul class="cart-lists clearfix">
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
-                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
-                                        title="Donec pede justo fringilla" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left d-table-cell align-top">
-                                <a href="product-details.html">Donec pede justo fringilla</a>
-                                <p class="size-color">Sliver Black/XXL</p>
-                                <p class="price">1 x 699.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
-                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
-                                        title="Sociosqu facilisi senectus nisi etiam" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left float-left d-table-cell align-top">
-                                <a href="#">Sociosqu facilisi senectus nisi</a>
-                                <p class="size-color">Red/XL</p>
-                                <p class="price">1 x 299.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
-                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
-                                        title="Nullam scelerisque suscipit sociis" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left d-table-cell align-top">
-                                <a href="product-details.html">Nullam scelerisque suscipit</a>
-                                <p class="size-color">Silver/L</p>
-                                <p class="price">1 x 239.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="{% static 'website/images/products/cart-pro-76x76.jpg'%}"
-                                        data-src="{% static 'website/images/products/cart-pro-76x76.jpg'%}" alt="image"
-                                        title="Pellentesque habitant morbi" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left d-table-cell align-top">
-                                <a href="product-details.html">Pellentesque habitant morbi</a>
-                                <p class="size-color">Black/M</p>
-                                <p class="price">1 x 119.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="minicart-bottom-actions">
-                    <div class="pro-totals d-inline-block w-100">
-                        <div class="items mb-1 clearfix">
-                            <span class="item subtotal float-left">Subtotal:</span>
-                            <span class="price-total float-right"><span class="price">1356.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item shipping float-left">Shipping:</span>
-                            <span class="price-total float-right"><span class="price">10.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item tax float-left">Tax:</span>
-                            <span class="price-total float-right"><span class="price">0.00</span></span>
-                        </div>
-                        <div class="items clearfix">
-                            <span class="item total float-left">Total:</span>
-                            <span class="price-total float-right"><span class="price">1366.00</span></span>
-                        </div>
-                    </div>
-                    <div class="actions d-inline-block w-100 text-center">
-                        <a class="btn btn-primary d-block mb-4 font-sm-14" href="cart.html">View Cart</a>
-                        <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">Proceed to checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include 'cart_drawar.html'%}
         <!-- End Cart Drawer -->
 
         <!-- Start Product Cart Added Popup -->
-        <div id="open-addtocart-popup" class="addtocart-popup magnific-popup mfp-hide">
+        <!-- <div id="open-addtocart-popup" class="addtocart-popup magnific-popup mfp-hide">
             <div class="addtocart-inner-content text-center">
                 <h4>Added to Cart Successfully</h4>
                 <p class="pro-img"><img class="img-fluid blur-up lazyload"
@@ -1536,7 +758,7 @@
                     <a href="cart.html" class="btn btn-primary btn-block view-cart">View Cart</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- End Product Cart Added Popup -->
 
         <!-- Start Product Quick View Popup -->

@@ -19,7 +19,7 @@
                     <div class="row row-sp">
                         <div class="col-sp col-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="checkout-success-banner">
-                                <img class="img-fluid" src="assets/images/others/checkout-success-banner.jpg"
+                                <img class="img-fluid" src="{% static 'website/images/others/checkout-success-banner.jpg'%}"
                                     alt="Checkout Success Banner" title="Checkout Success Banner" />
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                                         of your order and a link to track its progress.</p>
                                     <p class="card-text mb-1">All necessary information about the delivery, we sent to
                                         your email</p>
-                                    <a href="index.html" class="btn btn-primary mt-4">Continue Shopping</a>
+                                    <a href="{% url 'index'%}" class="btn btn-primary mt-4">Continue Shopping</a>
                                 </div>
                             </div>
                         </div>
@@ -56,43 +56,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {{carts}}
+                                            {% for c in carts %}
                                             <tr>
-                                                <td class="pro-img text-center"><a href="product-details.html"><img
+                                                <td class="pro-img text-center"><a href="#"><img
                                                             class="img-fluid blur-up lazyload"
-                                                            src="assets/images/products/product-100x100.jpg"
-                                                            data-src="assets/images/products/product-100x100.jpg"
+                                                            src="{{c.Image}}"
+                                                            data-src="{{c.Image}}"
                                                             alt="image" title="image" width="100"></a></td>
                                                 <td class="pro-name text-center text-sm-left">
-                                                    <p class="mb-1"><a href="product-details.html">Waterproof Cigarette
-                                                            tiyer</a></p>
+                                                    <p class="mb-1"><a href="#">{{c.name}}</a></p>
                                                 </td>
-                                                <td class="pro-price text-center">1</td>
-                                                <td class="pro-price text-center">376.00</td>
-                                                <td class="pro-total text-center">376.00</td>
+                                                <td class="pro-price text-center">{{c.quantity}}</td>
+                                                <td class="pro-price text-center">{{c.price}}</td>
+                                                <td class="pro-total text-center">{{c.total_price}}</td>
                                             </tr>
-                                            <tr>
-                                                <td class="pro-img text-center"><a href="product-details.html"><img
-                                                            class="img-fluid blur-up lazyload"
-                                                            src="assets/images/products/product-100x100.jpg"
-                                                            data-src="assets/images/products/product-100x100.jpg"
-                                                            alt="image" title="image" width="100"></a></td>
-                                                <td class="pro-name text-center text-sm-left">
-                                                    <p class="mb-1"><a href="product-details.html">Waterproof Cigarette
-                                                            tiyer</a></p>
-                                                </td>
-                                                <td class="pro-price text-center">1</td>
-                                                <td class="pro-price text-center">376.00</td>
-                                                <td class="pro-total text-center">376.00</td>
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                         <tfoot class="text-right">
                                             <tr>
                                                 <td colspan="4" class="item subtotal">Subtotal:</td>
-                                                <td class="last">59.00</td>
+                                                <td class="last">{{sub_total}}</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="item tax">Tax:</td>
-                                                <td class="last">4.87</td>
+                                                <td class="last">00.00</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="item discount">Discount:</td>
@@ -100,11 +88,11 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="item shipping">Shipping:</td>
-                                                <td class="last">5.00</td>
+                                                <td class="last">00.00</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4" class="item total">Grand Total:</td>
-                                                <td class="last">68.87</td>
+                                                <td class="last">{{sub_total}}</td>
                                             </tr>
                                         </tfoot>
                                     </table>

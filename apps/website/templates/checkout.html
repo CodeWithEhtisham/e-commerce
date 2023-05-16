@@ -22,26 +22,26 @@
             <!-- Start checkout -->
             <div class="checkout-content">
                 <div class="container">
-
-                    <!-- Start Checkout Content -->
-                    <div class="row">
-                        <!-- Start Checkout Form -->
-                        <div class="checkout-form col-12 col-sm-12 col-lg-8 mb-5 mb-lg-0 sidebar-left">
-                            <!-- Start Shipping Form -->
-                            <form action="#" class="shiping-form needs-validation" novalidate>
+                    <form action="{% url 'checkout_success'%}" class="shiping-form needs-validation" novalidate method="post">
+                        {% csrf_token %}
+                        <!-- Start Checkout Content -->
+                        <div class="row">
+                            <!-- Start Checkout Form -->
+                            <div class="checkout-form col-12 col-sm-12 col-lg-8 mb-5 mb-lg-0 sidebar-left">
+                                <!-- Start Shipping Form -->
                                 <div class="card rounded-0">
                                     <div class="card-header rounded-0">Shipping Address</div>
                                     <div class="card-body">
                                         <div class="row form-group mb-0">
                                             <div class="col-12 col-sm-6 col-md-6 mb-4">
                                                 <label>First Name: *</label>
-                                                <input type="text" name="first-name" class="form-control" placeholder=""
+                                                <input type="text" name="first-name" class="form-control" placeholder="" 
                                                     required />
                                                 <div class="invalid-feedback">Please enter your first name.</div>
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-6 mb-4">
                                                 <label>Last Name: *</label>
-                                                <input type="text" name="last-name" class="form-control" placeholder=""
+                                                <input type="text" name="last-name" class="form-control" placeholder="" 
                                                     required />
                                                 <div class="invalid-feedback">Please enter your last name.</div>
                                             </div>
@@ -58,7 +58,7 @@
                                         <div class="row form-group mb-0">
                                             <div class="col-12 col-sm-6 col-md-6 mb-4">
                                                 <label>City: *</label>
-                                                <input type="text" name="phone-number" class="form-control"
+                                                <input type="text" name="city" class="form-control"
                                                     placeholder="enter City" required />
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-6 mb-4">
@@ -87,81 +87,83 @@
                                         <div class="row form-group mb-0">
                                             <div class="col-12 col-sm-12 col-md-12">
                                                 <label>Order Notes:</label>
-                                                <textarea class="form-control" rows="3" placeholder=""></textarea>
+                                                <textarea class="form-control" rows="3" placeholder="" name="order-notes"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <!-- End Shipping Form -->
-                        </div>
-                        <!-- End Checkout Form -->
-
-                        <!-- Start Cart Order -->
-                        <div class="checkout-order col-12 col-sm-12 col-lg-4 sidebar sidebar-right">
-                            <h3>Review Order</h3>
-                            <!-- Start Order Cart Table -->
-                            <div class="table-content table-responsive mb-4">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center"><b>Product</b></th>
-                                            <th class="text-left"></th>
-                                            <th class="text-center"><b>Price</b></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="pro-img text-center"><a href="#"><img
-                                                        class="img-fluid blur-up lazyload"
-                                                        src="assets/images/products/product-60x60.jpg"
-                                                        data-src="assets/images/products/product-60x60.jpg" alt="image"
-                                                        title="image" width="60" /></a></td>
-                                            <td class="pro-del text-left">
-                                                <p class="mb-1 pro-name">Donec pede justo fringilla</p>
-                                                <p class="mb-1">Quantity: 2</p>
-                                            </td>
-                                            <td class="pro-price text-center">376.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left" colspan="2"><b>Subtotal:</b></td>
-                                            <td class="text-center font-14"><strong>529.15</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left" colspan="2"><b>Total:</b></td>
-                                            <td class="text-center font-14"><strong>529.15</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <!-- End Shipping Form -->
                             </div>
-                            <!-- End Order Cart Table -->
+                            <!-- End Checkout Form -->
 
-                            <!-- Start Payment Method -->
-                            <div class="payment-method accordion" id="payment-method">
-                                <!-- Start Cash on delivery -->
-                                <div class="card border-0 rounded-0 mb-3">
-                                    <div class="card-header border-0 rounded-0 p-0 bg-white" id="payment-One1">
-                                        <div class="form-check" role="tablist" data-toggle="collapse"
-                                            data-target="#paymentOne" aria-expanded="true" aria-controls="paymentOne">
-                                            <input class="form-check-input" type="radio" name="paymentRadio"
-                                                id="paymentRadio1" checked />
-                                            <label class="form-check-label w-100 ml-3" for="paymentRadio1">Cash on
-                                                delivery</label>
+                            <!-- Start Cart Order -->
+                            <div class="checkout-order col-12 col-sm-12 col-lg-4 sidebar sidebar-right">
+                                <h3>Review Order</h3>
+                                <!-- Start Order Cart Table -->
+                                <div class="table-content table-responsive mb-4">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center"><b>Product</b></th>
+                                                <th class="text-left"></th>
+                                                <th class="text-center"><b>Price</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for c in carts %}
+                                            <tr>
+                                                <td class="pro-img text-center"><a href="#"><img
+                                                            class="img-fluid blur-up lazyload" src="{{c.Image}}"
+                                                            data-src="{{c.Image}}" alt="image" title="image"
+                                                            width="60" /></a></td>
+                                                <td class="pro-del text-left">
+                                                    <p class="mb-1 pro-name">{{c.name}}</p>
+                                                    <p class="mb-1">Quantity: {{c.quantity}}</p>
+                                                </td>
+                                                <td class="pro-price text-center">{{c.total_price}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                            <tr>
+                                                <td class="text-left" colspan="2"><b>Subtotal:</b></td>
+                                                <td class="text-center font-14"><strong>{{sub_total}}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left" colspan="2"><b>Total:</b></td>
+                                                <td class="text-center font-14"><strong>{{sub_total}}</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- End Order Cart Table -->
+
+                                <!-- Start Payment Method -->
+                                <div class="payment-method accordion" id="payment-method">
+                                    <!-- Start Cash on delivery -->
+                                    <div class="card border-0 rounded-0 mb-3">
+                                        <div class="card-header border-0 rounded-0 p-0 bg-white" id="payment-One1">
+                                            <div class="form-check" role="tablist" data-toggle="collapse"
+                                                data-target="#paymentOne" aria-expanded="true"
+                                                aria-controls="paymentOne">
+                                                <input class="form-check-input" type="radio" name="paymentRadio"
+                                                    id="paymentRadio1" checked />
+                                                <label class="form-check-label w-100 ml-3" for="paymentRadio1">Cash on
+                                                    delivery</label>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!-- End Cash on delivery -->
                                 </div>
-                                <!-- End Cash on delivery -->
-                            </div>
-                            <!-- End Payment Method -->
+                                <!-- End Payment Method -->
 
-                            <div class="form-group mt-5">
-                                <a href="{% url 'checkout_success'%}"
-                                    class="btn btn-primary btn-lg btn-block place-order-btn">Place order</a>
+                                <div class="form-group mt-5">
+                                    <input type="submit" value="Place order"
+                                        class="btn btn-primary btn-lg btn-block place-order-btn">
+                                </div>
                             </div>
+                            <!-- End Cart Order -->
                         </div>
-                        <!-- End Cart Order -->
-                    </div>
-                    <!-- End Checkout Content -->
+                        <!-- End Checkout Content -->
+                    </form>
                 </div>
             </div>
             <!-- End checkout -->
@@ -177,69 +179,7 @@
         <!-- End Scroll Top -->
 
         <!-- Start Cart Drawer -->
-        <div class="minicart-wrapper">
-            <div class="cart-drawer model fade right show cart-drawer-right">
-                <div class="minicart-head">
-                    <h3>Shopping Cart</h3>
-                    <a class="close-btn active">
-                        <i class="ti-close"></i>
-                    </a>
-                </div>
-                <div class="minicart-details">
-                    <div class="empty-cart">
-                        <p>You have no items in your shopping cart.</p>
-                    </div>
-                    <ul class="cart-lists clearfix">
-                        <!-- List of Products added to CART -->
-                        <li class="cart-item d-table">
-                            <div class="pro-img d-table-cell align-middle">
-                                <a href="product-details.html">
-                                    <img class="img-fluid blur-up lazyload"
-                                        src="assets/images/products/cart-pro-76x76.jpg"
-                                        data-src="assets/images/products/cart-pro-76x76.jpg" alt="image"
-                                        title="Donec pede justo fringilla" />
-                                </a>
-                            </div>
-                            <div class="item-info pl-4 text-left d-table-cell align-top">
-                                <a href="product-details.html">Donec pede justo fringilla</a>
-                                <p class="size-color">Sliver Black/XXL</p>
-                                <p class="price">1 x 699.00</p>
-                            </div>
-                            <div class="item-right cart-remove d-table-cell align-middle">
-                                <a class="edit mr-2" href="#"><i class="ti-pencil-alt"></i></a>
-                                <a class="remove" href="#"><i class="ti-close"></i></a>
-                            </div>
-                        </li>
-                        
-                    </ul>
-                </div>
-
-                <div class="minicart-bottom-actions">
-                    <div class="pro-totals d-inline-block w-100">
-                        <div class="items mb-1 clearfix">
-                            <span class="item subtotal float-left">Subtotal:</span>
-                            <span class="price-total float-right"><span class="price">1356.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item shipping float-left">Shipping:</span>
-                            <span class="price-total float-right"><span class="price">10.00</span></span>
-                        </div>
-                        <div class="items mb-1 clearfix">
-                            <span class="item tax float-left">Tax:</span>
-                            <span class="price-total float-right"><span class="price">0.00</span></span>
-                        </div>
-                        <div class="items clearfix">
-                            <span class="item total float-left">Total:</span>
-                            <span class="price-total float-right"><span class="price">1366.00</span></span>
-                        </div>
-                    </div>
-                    <div class="actions d-inline-block w-100 text-center">
-                        <a class="btn btn-primary d-block mb-4 font-sm-14" href="cart.html">View Cart</a>
-                        <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">Proceed to checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include 'cart_drawar.html'%}
         <!-- End Cart Drawer -->
 
         <!-- Overlay -->

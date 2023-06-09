@@ -3,9 +3,9 @@
     <ul class="nav">
       <li class="nav-item nav-profile">
         <div class="nav-link">
-          <div class="profile-image">
+          {% comment %} <div class="profile-image">
             <img src="{% static 'admin/images/faces/face5.jpg'%}" alt="image">
-          </div>
+          </div> {% endcomment %}
           <div class="profile-name">
             <p class="name">
               Welcome
@@ -43,18 +43,7 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-          <i class="fas fa-exclamation-circle menu-icon"></i>
-          <span class="menu-title">Management</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="error">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{% url 'category'%}"> Categorry </a></li>
-          </ul>
-        </div>
-      </li>
+      
       {% if request.user.is_superuser  %}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false"
@@ -70,18 +59,6 @@
         </div>
       </li>
       {% endif %}
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="false"
-          aria-controls="e-commerce">
-          <i class="fas fa-shopping-cart menu-icon"></i>
-          <span class="menu-title">E-commerce</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="e-commerce">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{% url 'invoice'%}"> Invoice </a></li>
-          </ul>
-        </div>
-      </li>
+      
     </ul>
   </nav>

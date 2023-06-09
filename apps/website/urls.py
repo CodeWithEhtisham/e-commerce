@@ -19,6 +19,9 @@ urlpatterns = [
 
     path('api/increament_quantity/', views.increament_quantity, name='increament_quantity'),
     path('api/decreament_quantity/', views.decreament_quantity, name='decreament_quantity'),
+    path('api/remove_from_cart/', views.remove_from_cart, name='remove_from_cart'),
+    path('api/change_color/', views.change_color, name='change_color'),
+    path('api/change_size/', views.change_size, name='change_size'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # # Serving the media files in development mode

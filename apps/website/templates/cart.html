@@ -59,8 +59,8 @@
                                                         width="100" /></a></td>
                                             <td class="pro-del text-center text-sm-left">
                                                 <p class="mb-1 pro-name"><a>{{ c.name }}</a></p>
-                                                <p class="mb-1">Size: Small</p>
-                                                <p class="mb-1">Color: Black</p>
+                                                <p class="mb-1">Size: {{c.size}}</p>
+                                                <p class="mb-1">Color: {{c.color}}</p>
                                             </td>
                                             <td class="pro-price text-center">{{ c.price }}</td>
                                             <td class="pro-qty text-center">
@@ -74,7 +74,7 @@
                                                         onclick="increment_quantity({{ c.id }})"><i
                                                             class="fa fa-plus"></i></button>
                                                 </div>
-                                                <a class="qty-remove ml-3" href="#"><i class="ti-close"></i></a>
+                                                <button class="qty-remove ml-3" onclick="cancel_product({{c.id}})"><i class="ti-close"></i></button>
                                             </td>
                                             <td class="pro-total text-center">{{ c.total_price }}</td>
                                         </tr>
@@ -168,11 +168,10 @@
                                 <i class="ti-close" aria-hidden="true"></i>
                             </a>
                         </div>
-                        <form action="#" class="position-relative">
-                            <input type="text" class="form-control" placeholder="Search Products..." />
-                            <button class="search-btn" type="submit">
-                                <i class="ti-search"></i>
-                            </button>
+                        <form action="{% url 'index'%}" class="position-relative" method="post">
+                            {% csrf_token %}
+                            <input type="text" class="form-control" placeholder="Search Products..." required name="search"/>
+                            <button class="search-btn" type="submit"><i class="ti-search"></i></button>
                         </form>
                     </div>
                 </div>
@@ -244,6 +243,37 @@
                 var totalCell = row.find('.pro-total');
                 totalCell.text(data.total_price);
                 $('#sub_total').text(data.sub_total);
+            }
+        },
+                error: function (error) {
+                    console.log('Error in Operation');
+                }
+            });
+        }
+
+        function cancel_product(val) {
+            // ajax call
+            $.ajax({
+                url: '/api/remove_from_cart/',
+                data: {
+                    'product_id': val,
+                },
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+            if (data.success) {
+                // Retrieve the current row
+                var row = $('#row_' + val);
+                console.log(data);
+                // Update the quantity value in the input field
+                var quantityInput = row.find('.qty-input');
+                quantityInput.val(data.quantity);
+
+                // Update the total price in the table cell
+                var totalCell = row.find('.pro-total');
+                totalCell.text(data.total_price);
+                $('#sub_total').text(data.sub_total);
+                row.remove();
             }
         },
                 error: function (error) {

@@ -12,6 +12,8 @@ class Product(models.Model):
     types=models.CharField(max_length=100)
     city=models.CharField(max_length=100)
     description=models.TextField()
+    size=models.CharField(max_length=100,default='M')
+    color=models.CharField(max_length=100,default='red')
 
 
 class Order(models.Model):

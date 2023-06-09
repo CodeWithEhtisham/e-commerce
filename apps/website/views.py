@@ -45,9 +45,12 @@ def add_to_cart(request, product_id=None):
             'Image': product.Image.url,
             'price': str(product.price),
             'quantity': 1,
-            'total_price': str(product.price)
-        }
+            'total_price': str(product.price),
+            'color': product.color,
+            'size': product.size,
 
+        }
+        print(cart)
     cart = get_cart(request)
     # print(cart)
     sub_total = sum([float(item['total_price']) for item in cart.values()])
@@ -60,8 +63,16 @@ def add_to_cart(request, product_id=None):
 # Create your views here.
 def index(request):
     if request.method=="POST":
-        pass
+        search=request.POST['search']
+        products=Product.objects.filter(name__icontains=search)
+        return render(request, 'shop-grid-fullwidth.html',{
+        'products':products,
+        "cart_length": len(get_cart(request)),
+        'carts': get_cart(request).values(),
+        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
+        })
     products = Product.objects.all().order_by('-id')[:4]
+    print("products", products)
     return render(request, 'index.html',{
         'products':products,
         "cart_length": len(get_cart(request)),
@@ -266,4 +277,64 @@ def decreament_quantity(request):
             })
     except Exception as e:
         print(e)
+        return JsonResponse({'error': f'Something went wrong {e}'})
+    
+
+@api_view(['GET'])
+def remove_from_cart(reqeust):
+    try:
+        # get product id form json
+        print('request remove api',reqeust.GET)
+        product_id = reqeust.GET.get('product_id')
+        print(product_id)
+        cart=get_cart(reqeust)
+        # clear_session(reqeust)
+        # delete product from cart
+        del cart[str(product_id)]
+        sub_total = sum([float(cart[i]['total_price']) for i in cart])
+        return JsonResponse({
+            'success': True,
+            'quantity': 0,
+            'total_price': 0,
+            'sub_total': sub_total,
+        })
+    except Exception as e:
+        print(e)
+        return JsonResponse({'error': f'Something went wrong {e}'})
+    
+@api_view(['GET'])
+def change_color(request):
+    try:
+        # get product id form json
+        print('request change color api',request.GET)
+        product_id = request.GET.get('id')
+        print(product_id)
+        color = request.GET.get('color')
+        print(color)
+        cart=get_cart(request)
+        # clear_session(request)
+        cart[str(product_id)]['color'] = color
+        return JsonResponse({
+            'success': True})
+    except Exception as e:
+        cart[str(product_id)]['color'] = color
+        return JsonResponse({'error': f'Something went wrong {e}'})
+    
+@api_view(['GET'])
+def change_size(request):
+    try:
+        # get product id form json
+        print('request change size api',request.GET)
+        product_id = request.GET.get('id')
+        print(product_id)
+        size = request.GET.get('size')
+        print(size)
+        cart=get_cart(request)
+        # clear_session(request)
+        cart[str(product_id)]['size'] = size
+        return JsonResponse({
+            'success': True})
+    
+    except Exception as e:
+        cart[str(product_id)]['size'] = size
         return JsonResponse({'error': f'Something went wrong {e}'})

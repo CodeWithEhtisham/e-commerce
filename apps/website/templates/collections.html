@@ -705,11 +705,10 @@
                                     <i class="ti-close" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <form action="#" class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search Products..." />
-                                <button class="search-btn" type="submit">
-                                    <i class="ti-search"></i>
-                                </button>
+                            <form action="{% url 'index'%}" class="position-relative" method="post">
+                                {% csrf_token %}
+                                <input type="text" class="form-control" placeholder="Search Products..." required name="search"/>
+                                <button class="search-btn" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </div>

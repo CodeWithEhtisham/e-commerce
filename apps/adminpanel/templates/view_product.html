@@ -81,9 +81,13 @@
                                                     <td>{{p.types}}</td>
                                                     <td>{{p.city}}</td>
                                                     <td>{{p.price}}</td>
+                                                    <form action="{% url 'view_product'%}" method="POST">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="p_id" value="{{p.id}}">
                                                     <td>
-                                                        <label class="badge badge-danger">Remove</label>
+                                                        <button class="badge badge-danger" type="submit">Remove</button>
                                                     </td>
+                                                    </form>
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>

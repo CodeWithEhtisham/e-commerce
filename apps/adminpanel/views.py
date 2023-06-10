@@ -15,12 +15,31 @@ def admin_index(request):
 
 
 def orders(request):
+    if request.method == 'POST':
+        ordoer_id = request.POST['order_id']
+        print(request.POST)
+        if request.POST.get('status'):
+            Order.objects.filter(id=ordoer_id).update(status="Confirmed")
+        if request.POST.get('actions'):
+            print('action')
+            Order.objects.filter(id=ordoer_id).update(action="Delivered")
     if request.user.is_superuser:
         orders = Order.objects.all()
-        return render(request, 'orders.html', {'orders': orders})
+        # count total quantity and total price
+        total_quantity=0
+        total_price=0
+        for order in orders:
+            total_quantity+=order.quantity
+            total_price+=order.total
+        return render(request, 'orders.html', {'orders': orders,'total_quantity':total_quantity,'total_price':total_price})
     else:
         orders = Order.objects.filter(product__user=request.user)
-        return render(request, 'orders.html', {'orders': orders})
+        total_price=0
+        total_quantity=0
+        for order in orders:
+            total_price+=order.total
+            total_quantity+=order.quantity
+        return render(request, 'orders.html', {'orders': orders,'total_quantity':total_quantity,'total_price':total_price})
 
 def add_product(request):
     if request.method == 'POST':
@@ -35,6 +54,8 @@ def add_product(request):
             types = request.POST['p-type']
             city = request.POST['p-city']
             description = request.POST['p-description']
+            size=request.POST.getlist('size')
+            color=request.POST.getlist('color')
 
             # Save image in media folder
             image_name = image.name
@@ -58,7 +79,9 @@ def add_product(request):
                 Image=image_path,  # Store the image path instead of the image itself
                 types=types, 
                 city=city, 
-                description=description)
+                description=description,
+                size=",".join(size),
+                color=",".join(color))
             return render(request, 'add_product.html', {'success': 'Product added successfully'})
         except Exception as e:
             print('error',e)
@@ -73,7 +96,8 @@ def invoice(request):
 
 def view_product(request):
     if request.method=="POST":
-        pass
+        p_id=request.POST['p_id']
+        Product.objects.filter(id=p_id).delete()
     if request.user.is_superuser:
         product=Product.objects.all()
     else:

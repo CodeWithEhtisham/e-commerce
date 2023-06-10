@@ -10,7 +10,8 @@ from django.shortcuts import get_object_or_404, redirect
 from django.conf import settings
 import random
 # from  import get_cart, CART_SESSION_KEY
-
+color=None
+size=None
 def clear_session(request):
     request.session.flush()
 
@@ -20,6 +21,7 @@ def get_cart(request):
     return cart
 
 def add_to_cart(request, product_id=None):
+    global color, size
     if product_id is None:
         cart = get_cart(request)
         # print(cart)
@@ -46,8 +48,8 @@ def add_to_cart(request, product_id=None):
             'price': str(product.price),
             'quantity': 1,
             'total_price': str(product.price),
-            'color': product.color,
-            'size': product.size,
+            'color': color,
+            'size': size,
 
         }
         print(cart)
@@ -211,7 +213,9 @@ def product_details(request,product_id):
         'sp':sp,
         "cart_length": len(get_cart(request)),
         'carts': get_cart(request).values(),
-        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()])
+        "sub_totals": sum([float(item['total_price']) for item in get_cart(request).values()]),
+        'color':[i.lower() for i in sp.color.split(',')],
+        'size':sp.size.split(',')
         })
 
 
@@ -306,35 +310,33 @@ def remove_from_cart(reqeust):
 def change_color(request):
     try:
         # get product id form json
+        global color
         print('request change color api',request.GET)
         product_id = request.GET.get('id')
         print(product_id)
-        color = request.GET.get('color')
-        print(color)
-        cart=get_cart(request)
-        # clear_session(request)
-        cart[str(product_id)]['color'] = color
+        c = request.GET.get('color')
+        print(c)
+        color=c
+        
         return JsonResponse({
             'success': True})
     except Exception as e:
-        cart[str(product_id)]['color'] = color
         return JsonResponse({'error': f'Something went wrong {e}'})
     
 @api_view(['GET'])
 def change_size(request):
     try:
         # get product id form json
+        global size
         print('request change size api',request.GET)
         product_id = request.GET.get('id')
         print(product_id)
-        size = request.GET.get('size')
-        print(size)
-        cart=get_cart(request)
-        # clear_session(request)
-        cart[str(product_id)]['size'] = size
+        size_type = request.GET.get('size')
+        print(size_type)
+        size=size_type
         return JsonResponse({
             'success': True})
-    
     except Exception as e:
-        cart[str(product_id)]['size'] = size
+        print(e)
         return JsonResponse({'error': f'Something went wrong {e}'})
+        

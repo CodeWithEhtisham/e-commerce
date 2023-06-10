@@ -81,12 +81,16 @@
                                                     <td>{{o.quantity}}</td>
                                                     <td>{{o.product.price}}</td>
                                                     <td>{{o.total}}</td>
+                                                    <form action="{% url 'orders'%}" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="order_id" value="{{o.id}}">
                                                     <td>
-                                                        <label class="badge badge-outline-info">Confirm</label>
+                                                        <button class="badge badge-outline-info" type="submit" name="status" value="confirm">{{o.status}}</button>
                                                     </td>
                                                     <td>
-                                                        <button class="badge badge-outline-success">Delivered</button>
+                                                        <button class="badge badge-outline-success" type="submit" name="actions" value="deliver">{{o.action}}</button>
                                                     </td>
+                                                    </form>
                                                     
                                                 </tr>
                                                 {% endfor %}
@@ -101,9 +105,9 @@
                                                     <th></th>
                                                     <th></th>
                                                     <th></th>
-                                                    <th>10</th>
+                                                    <th>{{total_quantity}}</th>
                                                     <th></th>
-                                                    <th>000</th>
+                                                    <th>{{total_price}}</th>
                                                     <th></th>
                                                     <th></th>
                                                 </tr>

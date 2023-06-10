@@ -204,41 +204,29 @@
                             <!-- Start Product Color -->
                             <input type="hidden" value="{{sp.id}}" id="sp_id">
                             <div class="product-color">
-                                <p class="mb-2">Color: <b id="color_change">{{sp.color}}</b></p>
+                                <p class="mb-2">Color: <b id="color_change">Not Selected</b></p>
                                 <ul class="d-flex flex-row align-items-center color-item" data-toggle="buttons">
-                                    <li class="btn red active" data-toggle="tooltip" data-placement="top" title="red" onclick="color_change('red')">
-                                        <span></span></li>
-                                    <li class="btn navy" data-toggle="tooltip" data-placement="top" title="navy" onclick="color_change('navy')">
-                                        <span></span></li>
-                                    <li class="btn light-blue" data-toggle="tooltip" data-placement="top" onclick="color_change('light-blue')"
-                                        title="light-blue"><span></span></li>
-                                    <li class="btn green" data-toggle="tooltip" data-placement="top" title="green" onclick="color_change('green')">
-                                        <span></span></li>
-                                    <li class="btn yellow" data-toggle="tooltip" data-placement="top" title="yellow" onclick="color_change('yellow')">
-                                        <span></span></li>
+                                    {% for col in color%}
+                                    <li class="btn {{col}}" data-toggle="tooltip" data-placement="top"
+                                        title="{{col}}" onclick="color_change('{{col}}')"><span></span></li>
+                                    {% endfor %}
+                                    
                                 </ul>
                             </div>
                             <!-- End Product Color -->
 
                             <!-- Start Product Size -->
+                            
                             <div class="product-size">
-                                <p class="mb-2" >Size: <b id="size_change">{{sp.size}}</b></p>
+                                
+
+                                <p class="mb-2" >Size: <b id="size_change">not selected</b></p>
                                 <ul class="d-flex flex-row align-items-center color-item" data-toggle="buttons">
-                                    <li class="btn x active" data-toggle="tooltip" data-placement="top" title="x" onclick="change_size('X')">
-                                        <span>X</span>
+                                    {% for sz in size %}
+                                    <li class="btn {{sz.size}}" data-toggle="tooltip" data-placement="top" title="{{sz}}" onclick="change_size('{{sz}}')">
+                                        <span>{{sz}}</span>
                                     </li>
-                                    <li class="btn xl" data-toggle="tooltip" data-placement="top" title="xl" onclick="change_size('XL')">
-                                        <span>XL</span>
-                                    </li>
-                                    <li class="btn m" data-toggle="tooltip" data-placement="top" title="m" onclick="change_size('M')">
-                                        <span>M</span>
-                                    </li>
-                                    <li class="btn s" data-toggle="tooltip" data-placement="top" title="s" onclick="change_size('S')">
-                                        <span>S</span>
-                                    </li>
-                                    <li class="btn xxl" data-toggle="tooltip" data-placement="top" title="xxl" onclick="change_size('XXL')">
-                                        <span>XXL</span>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                                 
                                 <script>

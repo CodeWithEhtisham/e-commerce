@@ -22,5 +22,6 @@ class Order(models.Model):
     order_number = models.CharField(max_length=10, null=True, blank=True)
     total = models.FloatField(null=True, blank=True)
     quantity = models.IntegerField(null=True, blank=True)
-    status = models.CharField(max_length=20, null=True, blank=True,default='pending')
+    status = models.CharField(max_length=20, null=True, blank=True,default='Confirm')
+    action=models.CharField(max_length=20, null=True, blank=True,default='Deliver')
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)

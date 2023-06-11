@@ -21,7 +21,7 @@
                         <div class="container slideshow-details">
                             <h3>Buy With Confidence Our Traditional</h3>
                             <p>High Quality Stuffs</p>
-                            <a href="shop-grid-fullwidth.html" class="btn btn-primary">Buy now!</a>
+                            <a href="{% url 'shop_grid_fullwidth'%}" class="btn btn-primary">Buy now!</a>
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
@@ -29,7 +29,7 @@
                         <div class="container slideshow-details">
                             <h3>Perfect choice for Mens and Womens</h3>
                             <p>High Quality Stuffs</p>
-                                <a href="shop-grid-fullwidth.html" class="btn btn-primary">Buy now!</a>
+                                <a href="{% url 'shop_grid_fullwidth'%}" class="btn btn-primary">Buy now!</a>
                         </div>
                     </div>
                     <div class="single-slide slider-height bg-style blur-up lazyload d-flex align-items-center"
@@ -37,7 +37,7 @@
                         <div class="container slideshow-details">
                             <h3>Perfect and Handy made</h3>
                             <p>High Quality Stuffs</p>
-                            <a href="shop-grid-fullwidth.html" class="btn btn-primary">Buy now!</a>
+                            <a href="{% url 'shop_grid_fullwidth'%}" class="btn btn-primary">Buy now!</a>
                         </div>
                     </div>
                 </div>
@@ -94,20 +94,7 @@
                                                             href="{% url 'cart' p.id %}"
                                                             class="btn"><i
                                                                 class="icon ti-shopping-cart"></i></a></li>
-                                                    <li class="actions-quickview" data-toggle="tooltip"
-                                                        data-placement="top" title="quick view"><a
-                                                            href="#open-quickview-popup"
-                                                            class="btn open-quickview-popup"><i
-                                                                class="icon ti-zoom-in"></i></a></li>
-                                                    <li class="actions-wishlist" data-toggle="tooltip"
-                                                        data-placement="top" title="add to wishlist"><a
-                                                            href="#open-wishlist-popup"
-                                                            class="btn open-wishlist-popup"><i
-                                                                class="icon ti-heart"></i></a></li>
-                                                    <li class="actions-compare" data-toggle="tooltip"
-                                                        data-placement="top" title="add to compare"><a
-                                                            href="compare.html" class="btn"><i
-                                                                class="icon ti-control-shuffle"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>

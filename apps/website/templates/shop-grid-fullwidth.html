@@ -24,15 +24,7 @@
                 <!-- Start Products -->
                 <div class="product-view-items product-grid">
                     <div class="container">
-                        <!-- Start Collection Banner Image -->
-                        <div class="collection-banner-img">
-                            <div class="row">
-                                <div class="col-12">                  
-                                    <img class="img-fluid blur-up lazyload" src="{% static 'website/images/image-2.jpg' %}" data-src="{% static 'website/images/image-2.jpg' %}" alt="image" title="image" />                 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Collection Banner Image -->
+                        
 
                         <!-- Start Filters Tollbar -->
                         <div class="filters-toolbar">
@@ -42,26 +34,7 @@
                                         <a href="{% url 'shop_grid_fullwidth'%}" title="Grid" class="btn active" data-view="grid"><i class="ti-view-grid"></i></a><a href="shop-list-fullwidth.html" title="List" class="btn" data-view="list"><i class="ti-view-list-alt"></i></a>
                                     </div>
                                 </div>
-                                <div class="col-sp col-12 col-sm-4 text-center mb-4 mb-sm-0 order-0 order-sm-1">
-                                    <p class="m-0">Showing 1–16 of 21 results</p>
-                                </div>
-                                <div class="col-sp col-8 col-sm-4 text-right order-2 order-sm-2">
-                                    <div class="filters-item">
-                                        <div class="form-group m-0">
-                                            <label for="Sortby">Sort by:</label>
-                                            <select id="Sortby" class="form-control select2">
-                                                <option value="manual">Featured</option>
-                                                <option value="best-selling">Best Selling</option>
-                                                <option value="title-ascending">Alphabetically, A-Z</option>
-                                                <option value="title-descending">Alphabetically, Z-A</option>
-                                                <option value="price-ascending">Price, low to high</option>
-                                                <option value="price-descending">Price, high to low</option>
-                                                <option value="created-descending">Date, new to old</option>
-                                                <option value="created-ascending">Date, old to new</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <!-- End Filters Tollbar -->
@@ -71,7 +44,7 @@
                             <div class="row row-sp row-eq-height">
                                 <div class="row row-sp row-eq-height">
                                     {% for p in products %}
-                                    <div class="col-sp col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                    <div class="col-sp col-xl-9 col-lg-3 col-md-4 col-sm-6 col-6">
                                         <div class="product-item">
                                             <div class="product-image-action">
                                                 <div class="product-label">
@@ -98,20 +71,7 @@
                                                                 href="{% url 'cart' p.id %}"
                                                                 class="btn"><i
                                                                     class="icon ti-shopping-cart"></i></a></li>
-                                                        <li class="actions-quickview" data-toggle="tooltip"
-                                                            data-placement="top" title="quick view"><a
-                                                                href="#open-quickview-popup"
-                                                                class="btn open-quickview-popup"><i
-                                                                    class="icon ti-zoom-in"></i></a></li>
-                                                        <li class="actions-wishlist" data-toggle="tooltip"
-                                                            data-placement="top" title="add to wishlist"><a
-                                                                href="#open-wishlist-popup"
-                                                                class="btn open-wishlist-popup"><i
-                                                                    class="icon ti-heart"></i></a></li>
-                                                        <li class="actions-compare" data-toggle="tooltip"
-                                                            data-placement="top" title="add to compare"><a
-                                                                href="compare.html" class="btn"><i
-                                                                    class="icon ti-control-shuffle"></i></a></li>
+                                                        
                                                     </ul>
                                                 </div>
                                             </div>
@@ -139,19 +99,12 @@
 
                             <!-- Start Load More Button -->
                             <div class="product-readmore text-center">
-                                <button type="submit" class="btn btn-secondary">Load More</button>
+                                {% comment %} <button type="submit" class="btn btn-secondary">Load More</button> {% endcomment %}
                             </div>
                             <!-- End Load More Button -->
                         </div>
                         <!-- End Products Grid -->
 
-                        <!-- Start Collection Description -->
-                        <div class="collection-dec">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                            <h3>The standard Lorem Ipsum passage, used since the 1500s</h3>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                        </div>
-                        <!-- End Collection Description -->
                     </div>
                 </div>
                 <!-- End Products -->
